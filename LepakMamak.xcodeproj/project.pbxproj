@@ -1,0 +1,306 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FFA65CCE17E543E800040AF9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFA65CCD17E543E800040AF9 /* UIKit.framework */; };
+		FFA65CD017E543E800040AF9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFA65CCF17E543E800040AF9 /* Foundation.framework */; };
+		FFA65CD217E543E800040AF9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFA65CD117E543E800040AF9 /* CoreGraphics.framework */; };
+		FFA65CD817E543E800040AF9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FFA65CD617E543E800040AF9 /* InfoPlist.strings */; };
+		FFA65CDA17E543E800040AF9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA65CD917E543E800040AF9 /* main.m */; };
+		FFA65CDE17E543E800040AF9 /* OSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA65CDD17E543E800040AF9 /* OSAppDelegate.m */; };
+		FFA65CE017E543E800040AF9 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = FFA65CDF17E543E800040AF9 /* Default.png */; };
+		FFA65CE217E543E800040AF9 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFA65CE117E543E800040AF9 /* Default@2x.png */; };
+		FFA65CE417E543E800040AF9 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFA65CE317E543E800040AF9 /* Default-568h@2x.png */; };
+		FFA65CE717E543E800040AF9 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFA65CE517E543E800040AF9 /* MainStoryboard.storyboard */; };
+		FFA65CEA17E543E800040AF9 /* OSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA65CE917E543E800040AF9 /* OSViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		FFA65CCA17E543E800040AF9 /* LepakMamak.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LepakMamak.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFA65CCD17E543E800040AF9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		FFA65CCF17E543E800040AF9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		FFA65CD117E543E800040AF9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		FFA65CD517E543E800040AF9 /* LepakMamak-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LepakMamak-Info.plist"; sourceTree = "<group>"; };
+		FFA65CD717E543E800040AF9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FFA65CD917E543E800040AF9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FFA65CDB17E543E800040AF9 /* LepakMamak-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LepakMamak-Prefix.pch"; sourceTree = "<group>"; };
+		FFA65CDC17E543E800040AF9 /* OSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSAppDelegate.h; sourceTree = "<group>"; };
+		FFA65CDD17E543E800040AF9 /* OSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSAppDelegate.m; sourceTree = "<group>"; };
+		FFA65CDF17E543E800040AF9 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		FFA65CE117E543E800040AF9 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		FFA65CE317E543E800040AF9 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		FFA65CE617E543E800040AF9 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		FFA65CE817E543E800040AF9 /* OSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSViewController.h; sourceTree = "<group>"; };
+		FFA65CE917E543E800040AF9 /* OSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FFA65CC717E543E800040AF9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFA65CCE17E543E800040AF9 /* UIKit.framework in Frameworks */,
+				FFA65CD017E543E800040AF9 /* Foundation.framework in Frameworks */,
+				FFA65CD217E543E800040AF9 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FFA65CC117E543E700040AF9 = {
+			isa = PBXGroup;
+			children = (
+				FFA65CD317E543E800040AF9 /* LepakMamak */,
+				FFA65CCC17E543E800040AF9 /* Frameworks */,
+				FFA65CCB17E543E800040AF9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FFA65CCB17E543E800040AF9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FFA65CCA17E543E800040AF9 /* LepakMamak.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FFA65CCC17E543E800040AF9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FFA65CCD17E543E800040AF9 /* UIKit.framework */,
+				FFA65CCF17E543E800040AF9 /* Foundation.framework */,
+				FFA65CD117E543E800040AF9 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FFA65CD317E543E800040AF9 /* LepakMamak */ = {
+			isa = PBXGroup;
+			children = (
+				FFA65CDC17E543E800040AF9 /* OSAppDelegate.h */,
+				FFA65CDD17E543E800040AF9 /* OSAppDelegate.m */,
+				FFA65CE517E543E800040AF9 /* MainStoryboard.storyboard */,
+				FFA65CE817E543E800040AF9 /* OSViewController.h */,
+				FFA65CE917E543E800040AF9 /* OSViewController.m */,
+				FFA65CD417E543E800040AF9 /* Supporting Files */,
+			);
+			path = LepakMamak;
+			sourceTree = "<group>";
+		};
+		FFA65CD417E543E800040AF9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FFA65CD517E543E800040AF9 /* LepakMamak-Info.plist */,
+				FFA65CD617E543E800040AF9 /* InfoPlist.strings */,
+				FFA65CD917E543E800040AF9 /* main.m */,
+				FFA65CDB17E543E800040AF9 /* LepakMamak-Prefix.pch */,
+				FFA65CDF17E543E800040AF9 /* Default.png */,
+				FFA65CE117E543E800040AF9 /* Default@2x.png */,
+				FFA65CE317E543E800040AF9 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FFA65CC917E543E800040AF9 /* LepakMamak */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FFA65CED17E543E800040AF9 /* Build configuration list for PBXNativeTarget "LepakMamak" */;
+			buildPhases = (
+				FFA65CC617E543E800040AF9 /* Sources */,
+				FFA65CC717E543E800040AF9 /* Frameworks */,
+				FFA65CC817E543E800040AF9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LepakMamak;
+			productName = LepakMamak;
+			productReference = FFA65CCA17E543E800040AF9 /* LepakMamak.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FFA65CC217E543E700040AF9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = OS;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Wan Muzaffar";
+			};
+			buildConfigurationList = FFA65CC517E543E700040AF9 /* Build configuration list for PBXProject "LepakMamak" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = FFA65CC117E543E700040AF9;
+			productRefGroup = FFA65CCB17E543E800040AF9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FFA65CC917E543E800040AF9 /* LepakMamak */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FFA65CC817E543E800040AF9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFA65CD817E543E800040AF9 /* InfoPlist.strings in Resources */,
+				FFA65CE017E543E800040AF9 /* Default.png in Resources */,
+				FFA65CE217E543E800040AF9 /* Default@2x.png in Resources */,
+				FFA65CE417E543E800040AF9 /* Default-568h@2x.png in Resources */,
+				FFA65CE717E543E800040AF9 /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FFA65CC617E543E800040AF9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFA65CDA17E543E800040AF9 /* main.m in Sources */,
+				FFA65CDE17E543E800040AF9 /* OSAppDelegate.m in Sources */,
+				FFA65CEA17E543E800040AF9 /* OSViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FFA65CD617E543E800040AF9 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FFA65CD717E543E800040AF9 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		FFA65CE517E543E800040AF9 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FFA65CE617E543E800040AF9 /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FFA65CEB17E543E800040AF9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		FFA65CEC17E543E800040AF9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FFA65CEE17E543E800040AF9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LepakMamak/LepakMamak-Prefix.pch";
+				INFOPLIST_FILE = "LepakMamak/LepakMamak-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		FFA65CEF17E543E800040AF9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LepakMamak/LepakMamak-Prefix.pch";
+				INFOPLIST_FILE = "LepakMamak/LepakMamak-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FFA65CC517E543E700040AF9 /* Build configuration list for PBXProject "LepakMamak" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FFA65CEB17E543E800040AF9 /* Debug */,
+				FFA65CEC17E543E800040AF9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FFA65CED17E543E800040AF9 /* Build configuration list for PBXNativeTarget "LepakMamak" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FFA65CEE17E543E800040AF9 /* Debug */,
+				FFA65CEF17E543E800040AF9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FFA65CC217E543E700040AF9 /* Project object */;
+}
