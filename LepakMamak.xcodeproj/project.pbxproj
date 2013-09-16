@@ -18,6 +18,21 @@
 		FFA65CE417E543E800040AF9 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFA65CE317E543E800040AF9 /* Default-568h@2x.png */; };
 		FFA65CE717E543E800040AF9 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFA65CE517E543E800040AF9 /* MainStoryboard.storyboard */; };
 		FFA65CEA17E543E800040AF9 /* OSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA65CE917E543E800040AF9 /* OSViewController.m */; };
+		FFA65CF117E544DE00040AF9 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFA65CF017E544DE00040AF9 /* Parse.framework */; };
+		FFA65CF317E5459C00040AF9 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFA65CF217E5459C00040AF9 /* AudioToolbox.framework */; };
+		FFA65CF517E545A300040AF9 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFA65CF417E545A300040AF9 /* CFNetwork.framework */; };
+		FFA65CF717E545B000040AF9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFA65CF617E545B000040AF9 /* CoreLocation.framework */; };
+		FFA65CF917E545B600040AF9 /* libz.1.1.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FFA65CF817E545B600040AF9 /* libz.1.1.3.dylib */; };
+		FFA65CFB17E545BC00040AF9 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFA65CFA17E545BC00040AF9 /* MobileCoreServices.framework */; };
+		FFA65CFD17E545C400040AF9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFA65CFC17E545C400040AF9 /* QuartzCore.framework */; };
+		FFA65CFF17E545CC00040AF9 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFA65CFE17E545CC00040AF9 /* Security.framework */; };
+		FFA65D0117E545D200040AF9 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFA65D0017E545D200040AF9 /* StoreKit.framework */; };
+		FFA65D0317E545D900040AF9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFA65D0217E545D900040AF9 /* SystemConfiguration.framework */; };
+		FFA65D0717E585C100040AF9 /* OSConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA65D0617E585C100040AF9 /* OSConstants.m */; };
+		FFA65D0A17E5C2F900040AF9 /* OSDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA65D0917E5C2F800040AF9 /* OSDetailViewController.m */; };
+		FFA65D1817E61BED00040AF9 /* textfieldComment.png in Resources */ = {isa = PBXBuildFile; fileRef = FFA65D1617E61BED00040AF9 /* textfieldComment.png */; };
+		FFA65D1917E61BED00040AF9 /* textfieldComment@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFA65D1717E61BED00040AF9 /* textfieldComment@2x.png */; };
+		FFA65D1D17E6AACB00040AF9 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA65D1C17E6A9F100040AF9 /* MBProgressHUD.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +52,24 @@
 		FFA65CE617E543E800040AF9 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		FFA65CE817E543E800040AF9 /* OSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSViewController.h; sourceTree = "<group>"; };
 		FFA65CE917E543E800040AF9 /* OSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSViewController.m; sourceTree = "<group>"; };
+		FFA65CF017E544DE00040AF9 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		FFA65CF217E5459C00040AF9 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		FFA65CF417E545A300040AF9 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		FFA65CF617E545B000040AF9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		FFA65CF817E545B600040AF9 /* libz.1.1.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.1.3.dylib; path = usr/lib/libz.1.1.3.dylib; sourceTree = SDKROOT; };
+		FFA65CFA17E545BC00040AF9 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		FFA65CFC17E545C400040AF9 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		FFA65CFE17E545CC00040AF9 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		FFA65D0017E545D200040AF9 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		FFA65D0217E545D900040AF9 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		FFA65D0517E585C100040AF9 /* OSConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OSConstants.h; path = Utils/OSConstants.h; sourceTree = "<group>"; };
+		FFA65D0617E585C100040AF9 /* OSConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OSConstants.m; path = Utils/OSConstants.m; sourceTree = "<group>"; };
+		FFA65D0817E5C2F700040AF9 /* OSDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSDetailViewController.h; sourceTree = "<group>"; };
+		FFA65D0917E5C2F800040AF9 /* OSDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSDetailViewController.m; sourceTree = "<group>"; };
+		FFA65D1617E61BED00040AF9 /* textfieldComment.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = textfieldComment.png; path = Ressources/Images/textfieldComment.png; sourceTree = "<group>"; };
+		FFA65D1717E61BED00040AF9 /* textfieldComment@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "textfieldComment@2x.png"; path = "Ressources/Images/textfieldComment@2x.png"; sourceTree = "<group>"; };
+		FFA65D1B17E6A9F100040AF9 /* MBProgressHUD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		FFA65D1C17E6A9F100040AF9 /* MBProgressHUD.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,9 +77,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFA65D0317E545D900040AF9 /* SystemConfiguration.framework in Frameworks */,
+				FFA65D0117E545D200040AF9 /* StoreKit.framework in Frameworks */,
+				FFA65CFF17E545CC00040AF9 /* Security.framework in Frameworks */,
+				FFA65CFD17E545C400040AF9 /* QuartzCore.framework in Frameworks */,
+				FFA65CFB17E545BC00040AF9 /* MobileCoreServices.framework in Frameworks */,
+				FFA65CF917E545B600040AF9 /* libz.1.1.3.dylib in Frameworks */,
+				FFA65CF717E545B000040AF9 /* CoreLocation.framework in Frameworks */,
+				FFA65CD217E543E800040AF9 /* CoreGraphics.framework in Frameworks */,
+				FFA65CF517E545A300040AF9 /* CFNetwork.framework in Frameworks */,
+				FFA65CF317E5459C00040AF9 /* AudioToolbox.framework in Frameworks */,
 				FFA65CCE17E543E800040AF9 /* UIKit.framework in Frameworks */,
 				FFA65CD017E543E800040AF9 /* Foundation.framework in Frameworks */,
-				FFA65CD217E543E800040AF9 /* CoreGraphics.framework in Frameworks */,
+				FFA65CF117E544DE00040AF9 /* Parse.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +99,15 @@
 		FFA65CC117E543E700040AF9 = {
 			isa = PBXGroup;
 			children = (
+				FFA65D0217E545D900040AF9 /* SystemConfiguration.framework */,
+				FFA65D0017E545D200040AF9 /* StoreKit.framework */,
+				FFA65CFE17E545CC00040AF9 /* Security.framework */,
+				FFA65CFC17E545C400040AF9 /* QuartzCore.framework */,
+				FFA65CFA17E545BC00040AF9 /* MobileCoreServices.framework */,
+				FFA65CF817E545B600040AF9 /* libz.1.1.3.dylib */,
+				FFA65CF617E545B000040AF9 /* CoreLocation.framework */,
+				FFA65CF417E545A300040AF9 /* CFNetwork.framework */,
+				FFA65CF217E5459C00040AF9 /* AudioToolbox.framework */,
 				FFA65CD317E543E800040AF9 /* LepakMamak */,
 				FFA65CCC17E543E800040AF9 /* Frameworks */,
 				FFA65CCB17E543E800040AF9 /* Products */,
@@ -73,6 +125,7 @@
 		FFA65CCC17E543E800040AF9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FFA65CF017E544DE00040AF9 /* Parse.framework */,
 				FFA65CCD17E543E800040AF9 /* UIKit.framework */,
 				FFA65CCF17E543E800040AF9 /* Foundation.framework */,
 				FFA65CD117E543E800040AF9 /* CoreGraphics.framework */,
@@ -83,12 +136,17 @@
 		FFA65CD317E543E800040AF9 /* LepakMamak */ = {
 			isa = PBXGroup;
 			children = (
+				FFA65D1A17E61C2300040AF9 /* View */,
+				FFA65D0B17E61B7200040AF9 /* Ressources */,
+				FFA65D0417E584F700040AF9 /* Utils */,
 				FFA65CDC17E543E800040AF9 /* OSAppDelegate.h */,
 				FFA65CDD17E543E800040AF9 /* OSAppDelegate.m */,
 				FFA65CE517E543E800040AF9 /* MainStoryboard.storyboard */,
 				FFA65CE817E543E800040AF9 /* OSViewController.h */,
 				FFA65CE917E543E800040AF9 /* OSViewController.m */,
 				FFA65CD417E543E800040AF9 /* Supporting Files */,
+				FFA65D0817E5C2F700040AF9 /* OSDetailViewController.h */,
+				FFA65D0917E5C2F800040AF9 /* OSDetailViewController.m */,
 			);
 			path = LepakMamak;
 			sourceTree = "<group>";
@@ -105,6 +163,41 @@
 				FFA65CE317E543E800040AF9 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FFA65D0417E584F700040AF9 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				FFA65D1B17E6A9F100040AF9 /* MBProgressHUD.h */,
+				FFA65D1C17E6A9F100040AF9 /* MBProgressHUD.m */,
+				FFA65D0517E585C100040AF9 /* OSConstants.h */,
+				FFA65D0617E585C100040AF9 /* OSConstants.m */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		FFA65D0B17E61B7200040AF9 /* Ressources */ = {
+			isa = PBXGroup;
+			children = (
+				FFA65D0C17E61B7C00040AF9 /* Images */,
+			);
+			name = Ressources;
+			sourceTree = "<group>";
+		};
+		FFA65D0C17E61B7C00040AF9 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				FFA65D1617E61BED00040AF9 /* textfieldComment.png */,
+				FFA65D1717E61BED00040AF9 /* textfieldComment@2x.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		FFA65D1A17E61C2300040AF9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,6 +257,8 @@
 				FFA65CE217E543E800040AF9 /* Default@2x.png in Resources */,
 				FFA65CE417E543E800040AF9 /* Default-568h@2x.png in Resources */,
 				FFA65CE717E543E800040AF9 /* MainStoryboard.storyboard in Resources */,
+				FFA65D1817E61BED00040AF9 /* textfieldComment.png in Resources */,
+				FFA65D1917E61BED00040AF9 /* textfieldComment@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,9 +269,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFA65D1D17E6AACB00040AF9 /* MBProgressHUD.m in Sources */,
 				FFA65CDA17E543E800040AF9 /* main.m in Sources */,
 				FFA65CDE17E543E800040AF9 /* OSAppDelegate.m in Sources */,
 				FFA65CEA17E543E800040AF9 /* OSViewController.m in Sources */,
+				FFA65D0717E585C100040AF9 /* OSConstants.m in Sources */,
+				FFA65D0A17E5C2F900040AF9 /* OSDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +359,10 @@
 		FFA65CEE17E543E800040AF9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LepakMamak/LepakMamak-Prefix.pch";
 				INFOPLIST_FILE = "LepakMamak/LepakMamak-Info.plist";
@@ -272,6 +374,10 @@
 		FFA65CEF17E543E800040AF9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LepakMamak/LepakMamak-Prefix.pch";
 				INFOPLIST_FILE = "LepakMamak/LepakMamak-Info.plist";

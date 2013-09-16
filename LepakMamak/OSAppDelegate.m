@@ -13,6 +13,30 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    [Parse setApplicationId:@"0pdsd1YNGJsEIdK1VrIe13TV9KYAjI3HSNImUECf"
+                  clientKey:@"pfU85IYKLdWrGzhX1MLmaIwI2pllJCCPuhMecieg"];
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    PFUser *currentUser = [PFUser currentUser];
+    if (currentUser) {
+       // [self refresh:nil];
+    } else {
+        // Dummy username and password
+        PFUser *user = [PFUser user];
+        user.username = @"Matt";
+        user.password = @"password";
+        user.email = @"Matt@example.com";
+        
+        [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            if (!error) {
+             //   [self refresh:nil];
+            } else {
+                [PFUser logInWithUsername:@"Matt" password:@"password"];
+              //  [self refresh:nil];
+            }
+        }];
+    }
+
+
     return YES;
 }
 							

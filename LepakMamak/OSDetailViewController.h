@@ -1,5 +1,5 @@
 //
-//  OSViewController.h
+//  OSDetailViewController.h
 //  LepakMamak
 //
 //  Created by Azad Johari on 9/15/13.
@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
-@interface OSViewController : PFQueryTableViewController
-
-
+@interface OSDetailViewController : PFQueryTableViewController<UITextFieldDelegate>
+@property (nonatomic, strong) PFObject *restaurant;
 @end
