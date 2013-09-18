@@ -10,11 +10,11 @@
 #import "OSConstants.h"
 #import "MBProgressHUD.h"
 @interface OSDetailViewController ()
-
+@property (nonatomic, strong) IBOutlet OSHeaderView *headerView;
 @end
 
 @implementation OSDetailViewController
-@synthesize restaurant;
+@synthesize restaurant, headerView;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -27,6 +27,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    //Set table header
+    
+    self.headerView.restaurant = restaurant;
+    headerView.delegate = self;
+    
+    [ self.headerView.likeButton setTitle:[[[OSCache sharedCache] likeCountForRestaurant:restaurant] description]forState:UIControlStateNormal];
 	// Do any additional setup after loading the view.
 }
 
@@ -89,5 +96,23 @@ cell.detailTextLabel.text = [object valueForKey:@"updated_at"];
         
         }];
     }
+}
+-(void)headerView:(OSHeaderView *)headerView didTapLikeRestaurantButton:(UIButton *)button restaurant:(PFObject *)aRestaurant{
+    NSLog(@"button clicked");
+    BOOL liked = !button.selected;
+   // [headerView setLikesStatus:liked];
+    NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+    [numberFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_us"]];
+    
+    NSNumber *likeCount = [numberFormatter numberFromString:button.titleLabel.text];
+    
+  //  if (liked){
+    likeCount = [NSNumber numberWithInt:[likeCount intValue]+ 1];
+    [[OSCache sharedCache] incrementLikerCountForRestaurant:restaurant];
+    
+    [[OSUtility sharedInstance] likeRestaurantInBackground:restaurant block:^(BOOL succeeded, NSError *error){
+        
+    }];
+   // }
 }
 @end

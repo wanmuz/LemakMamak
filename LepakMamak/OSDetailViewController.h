@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
-@interface OSDetailViewController : PFQueryTableViewController<UITextFieldDelegate>
+#import "OSHeaderView.h"
+#import "OSCache.h"
+#import "OSUtility.h"
+@interface OSDetailViewController : PFQueryTableViewController<UITextFieldDelegate, OSHeaderViewDelegate>
 @property (nonatomic, strong) PFObject *restaurant;
+
+
 @end
