@@ -49,6 +49,14 @@
     // Drawing code
 }
 */
+-(void)setLikeStatus:(BOOL)liked{
+    [self.likeButton setSelected:liked];
+    if(liked){
+        [self.likeButton setTitle:@"You have Liked!" forState:UIControlStateNormal];
+    }else{
+         [self.likeButton setTitle:@"Unliked!" forState:UIControlStateNormal];
+    }
+}
 -(void)didTapLikeRestaurantButtonAction:(UIButton*)button{
     if (delegate && [delegate respondsToSelector:@selector(headerView:didTapLikeRestaurantButton:restaurant:)]) {
         [delegate headerView:self didTapLikeRestaurantButton:button restaurant:self.restaurant];

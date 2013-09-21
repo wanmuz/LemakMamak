@@ -20,11 +20,27 @@
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    if (![PFUser currentUser] ){
+        [self setLoginPage];
+    }
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+-(void)setLoginPage{
+    OSLoginViewController *loginViewController = [[OSLoginViewController alloc] init];
+    [loginViewController setDelegate:self];
+    [loginViewController setFacebookPermissions:[NSArray arrayWithObjects:@"friends_about_me", nil]];
+    [loginViewController setFields:PFLogInFieldsUsernameAndPassword | PFLogInFieldsTwitter | PFLogInFieldsSignUpButton | PFLogInFieldsDismissButton];
+    [self presentViewController:loginViewController animated:YES completion:nil];
+    
+    }
 
 #pragma mark - Parse
 
@@ -64,12 +80,7 @@
     //object.tag = indexPath.row;
     return cell;
 }
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    PFObject *restaurant = [self.objects objectAtIndex:indexPath.row];
-    if (restaurant) {
-        [self performSegueWithIdentifier:@"showDetail" sender:nil];
-    }
-}
+
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([[segue identifier] isEqualToString:@"showDetail"]){
         OSDetailViewController *detailVC = [segue destinationViewController];

@@ -15,4 +15,7 @@
 -(NSNumber *)likeCountForRestaurant:(PFObject*)restaurant;
 -(void)incrementLikerCountForRestaurant:(PFObject*)restaurant;
 -(void)decrementLikerCountForRestaurant:(PFObject*)restaurant;
+-(void)setRestaurantIsLikedByCurrentUser:(PFObject *)restaurant liked:(BOOL)liked;
+-(NSDictionary*)attributesForRestaurant:(PFObject*)restaurant;
+-(BOOL)isRestaurantLikedByCurrentUser:(PFObject*)restaurant;
 @end

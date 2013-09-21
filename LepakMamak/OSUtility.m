@@ -73,6 +73,53 @@ static OSUtility *_sharedInstance = nil;
         }];
     }];
 }
+
+-(void)unlikeRestaurantInBackground:(id)restaurant block:(void (^)(BOOL succeeded, NSError* error)) completionBlock{
+    PFQuery *queryExistingLikes = [PFQuery queryWithClassName:kOSActivityClassKey];
+    [queryExistingLikes whereKey:kOSActivityRestaurantKey equalTo:restaurant];
+    [queryExistingLikes whereKey:kOSActivityTypeKey equalTo:kOSActivityTypeLike];
+    [queryExistingLikes whereKey:kOSPActivityFromUserKey equalTo:[PFUser currentUser]];
+    [queryExistingLikes setCachePolicy:kPFCachePolicyNetworkOnly];
+    [queryExistingLikes findObjectsInBackgroundWithBlock:^(NSArray *activities, NSError *error) {
+        if (!error){
+            for (PFObject *activity in activities){
+                [activity delete];
+            }
+     if (completionBlock){
+         completionBlock(YES, nil);
+     }
+     PFQuery *query =[self queryForActivitiesOnRestaurant:restaurant cachePolicy:kPFCachePolicyNetworkOnly];
+     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError* error){
+        if (!error){
+            NSMutableArray *likers = [NSMutableArray array];
+            NSMutableArray *commenters = [NSMutableArray array];
+            
+            BOOL isLikedByCurrentUser = NO;
+            
+            for (PFObject *activity in objects){
+                if ([[activity objectForKey:kOSActivityTypeKey] isEqualToString:kOSActivityTypeLike]){
+                    [likers addObject:[activity objectForKey:kOSPActivityFromUserKey]];
+                } else if ([[activity objectForKey:kOSActivityTypeKey] isEqualToString:kOSActivityTypeComment]){
+                    [commenters addObject:[activity objectForKey:kOSPActivityFromUserKey]];
+                }
+                if ([[[activity objectForKey:kOSPActivityFromUserKey] objectId] isEqualToString:[[PFUser currentUser] objectId]]){
+                    if ([[activity objectForKey:kOSActivityTypeKey] isEqualToString:kOSActivityTypeLike]){
+                        isLikedByCurrentUser = YES;
+                    }
+                }
+            }
+            [[OSCache sharedCache] setAttributesForRestaurant:restaurant likers:likers commenters:commenters likedByCurrentUser:isLikedByCurrentUser];
+        }
+        
+    }];
+     } else{
+         if (completionBlock){
+             completionBlock(NO,error);
+         }
+     }
+     }];
+        
+}
 -(PFQuery *)queryForActivitiesOnRestaurant:(PFObject*)restaurant cachePolicy:(PFCachePolicy)cachePolicy{
     PFQuery *queryLikes = [PFQuery queryWithClassName:kOSActivityClassKey];
     [queryLikes whereKey:kOSActivityRestaurantKey equalTo:restaurant];

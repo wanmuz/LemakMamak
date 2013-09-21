@@ -36,6 +36,7 @@
 		FFA65D2017E7507200040AF9 /* OSUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA65D1F17E7507100040AF9 /* OSUtility.m */; };
 		FFA65D2417E88E6D00040AF9 /* OSCache.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA65D2317E88E6D00040AF9 /* OSCache.m */; };
 		FFA65D2717E899A900040AF9 /* OSHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA65D2617E899A900040AF9 /* OSHeaderView.m */; };
+		FFA65D2A17ED2D2700040AF9 /* OSLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA65D2917ED2D2500040AF9 /* OSLoginViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +80,8 @@
 		FFA65D2317E88E6D00040AF9 /* OSCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OSCache.m; path = Utils/OSCache.m; sourceTree = "<group>"; };
 		FFA65D2517E899A900040AF9 /* OSHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OSHeaderView.h; path = View/OSHeaderView.h; sourceTree = "<group>"; };
 		FFA65D2617E899A900040AF9 /* OSHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OSHeaderView.m; path = View/OSHeaderView.m; sourceTree = "<group>"; };
+		FFA65D2817ED2D2300040AF9 /* OSLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSLoginViewController.h; sourceTree = "<group>"; };
+		FFA65D2917ED2D2500040AF9 /* OSLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSLoginViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +159,8 @@
 				FFA65CD417E543E800040AF9 /* Supporting Files */,
 				FFA65D0817E5C2F700040AF9 /* OSDetailViewController.h */,
 				FFA65D0917E5C2F800040AF9 /* OSDetailViewController.m */,
+				FFA65D2817ED2D2300040AF9 /* OSLoginViewController.h */,
+				FFA65D2917ED2D2500040AF9 /* OSLoginViewController.m */,
 			);
 			path = LepakMamak;
 			sourceTree = "<group>";
@@ -293,6 +298,7 @@
 				FFA65D2017E7507200040AF9 /* OSUtility.m in Sources */,
 				FFA65D2417E88E6D00040AF9 /* OSCache.m in Sources */,
 				FFA65D2717E899A900040AF9 /* OSHeaderView.m in Sources */,
+				FFA65D2A17ED2D2700040AF9 /* OSLoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

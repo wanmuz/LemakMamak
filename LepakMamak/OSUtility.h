@@ -12,4 +12,6 @@
 @interface OSUtility : NSObject
 + (OSUtility*) sharedInstance;
 -(void)likeRestaurantInBackground:(id)restaurant block:(void (^)(BOOL succeeded, NSError *error)) completionBlock;
+-(void)unlikeRestaurantInBackground:(id)restaurant block:(void (^)(BOOL succeeded, NSError* error)) completionBlock;
+-(PFQuery *)queryForActivitiesOnRestaurant:(PFObject*)restaurant cachePolicy:(PFCachePolicy)cachePolicy;
 @end

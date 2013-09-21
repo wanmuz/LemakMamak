@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
-@interface OSViewController : PFQueryTableViewController
+#import "OSLoginViewController.h"
+@interface OSViewController : PFQueryTableViewController<PFLogInViewControllerDelegate>
 
 
 @end

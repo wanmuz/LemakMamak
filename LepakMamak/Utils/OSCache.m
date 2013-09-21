@@ -78,4 +78,16 @@
     [attributes setObject:likerCount forKey:kOSRestaurantAttributesLikeCountKey];
     [self setAttributes:attributes forRestaurant:restaurant];
 }
+-(void)setRestaurantIsLikedByCurrentUser:(PFObject *)restaurant liked:(BOOL)liked{
+    NSMutableDictionary *attributes = [NSMutableDictionary dictionaryWithDictionary:[self attributesForRestaurant:restaurant]];
+    [attributes setObject:[NSNumber numberWithBool:liked] forKey:kOSRestaurantAttributesIsLikedByCurrentUserKey];
+    [self setAttributes:attributes forRestaurant:restaurant];
+}
+-(BOOL)isRestaurantLikedByCurrentUser:(PFObject*)restaurant{
+    NSDictionary *attributes = [self attributesForRestaurant:restaurant];
+    if (attributes){
+        return [[attributes objectForKey:kOSRestaurantAttributesIsLikedByCurrentUserKey] boolValue] ;
+    }
+    return NO;
+}
 @end

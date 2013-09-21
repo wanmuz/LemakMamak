@@ -32,7 +32,42 @@
     
     self.headerView.restaurant = restaurant;
     headerView.delegate = self;
+    NSDictionary *attributesForRestau = [[OSCache sharedCache] attributesForRestaurant:restaurant];
+    if (attributesForRestau){
+        [headerView setLikeStatus:[[OSCache sharedCache] isRestaurantLikedByCurrentUser:restaurant]];
+        [headerView.likeButton setTitle:[[[OSCache sharedCache] likeCountForRestaurant:restaurant] description] forState:UIControlStateNormal];
+    }else{
+        
+        PFQuery *query = [[OSUtility sharedInstance] queryForActivitiesOnRestaurant:restaurant cachePolicy:kPFCachePolicyNetworkOnly];
+        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError* error){
+        
+            if (error) {
+                return;
+            }
+            NSMutableArray *likers = [NSMutableArray array];
+            NSMutableArray *commenters = [NSMutableArray array];
+            
+            BOOL isLikedByCurrentUser = NO;
+            
+            for (PFObject *activity in objects){
+                if ([[activity objectForKey:kOSActivityTypeKey] isEqualToString:kOSActivityTypeLike] && [activity objectForKey:kOSPActivityFromUserKey]){
+                    [likers addObject:kOSPActivityFromUserKey];
+                }else if([[activity objectForKey:kOSActivityTypeKey] isEqualToString:kOSActivityTypeComment] && [activity objectForKey:kOSPActivityFromUserKey]){
+                    [commenters addObject:kOSPActivityFromUserKey];
+                }
+            if ([[[activity objectForKey:kOSPActivityFromUserKey] objectId] isEqualToString:[[PFUser currentUser] objectId]]) {
+                if ([[activity objectForKey:kOSActivityTypeKey] isEqualToString:kOSActivityTypeLike]) {
+                    isLikedByCurrentUser = YES;
+                }
+            }
+            }
+            [[OSCache sharedCache] setAttributesForRestaurant:restaurant
+                                                 likers:likers commenters:commenters likedByCurrentUser:isLikedByCurrentUser];
+        }];
+        
     
+        }
+
     [ self.headerView.likeButton setTitle:[[[OSCache sharedCache] likeCountForRestaurant:restaurant] description]forState:UIControlStateNormal];
 	// Do any additional setup after loading the view.
 }
@@ -98,21 +133,38 @@ cell.detailTextLabel.text = [object valueForKey:@"updated_at"];
     }
 }
 -(void)headerView:(OSHeaderView *)headerView didTapLikeRestaurantButton:(UIButton *)button restaurant:(PFObject *)aRestaurant{
-    NSLog(@"button clicked");
+   
     BOOL liked = !button.selected;
-   // [headerView setLikesStatus:liked];
+   // [headerView setLikeStatus:liked];
     NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
     [numberFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_us"]];
     
     NSNumber *likeCount = [numberFormatter numberFromString:button.titleLabel.text];
     
-  //  if (liked){
+    if (liked){
     likeCount = [NSNumber numberWithInt:[likeCount intValue]+ 1];
     [[OSCache sharedCache] incrementLikerCountForRestaurant:restaurant];
-    
-    [[OSUtility sharedInstance] likeRestaurantInBackground:restaurant block:^(BOOL succeeded, NSError *error){
-        
-    }];
+    }
+    else{
+        if ([likeCount intValue] > 0){
+            likeCount = [NSNumber numberWithInt:[likeCount intValue] - 1];
+        }
+        [[OSCache sharedCache] decrementLikerCountForRestaurant:restaurant];
+    }
+    [[OSCache sharedCache] setRestaurantIsLikedByCurrentUser:restaurant liked:liked];
+    [button setTitle:[numberFormatter stringFromNumber:likeCount] forState:UIControlStateNormal];
+    if (liked){
+        [[OSUtility sharedInstance] likeRestaurantInBackground:restaurant block:^(BOOL succeeded, NSError *error){
+            
+        }];
+    }else{
+      [ [OSUtility sharedInstance] unlikeRestaurantInBackground:restaurant block:^(BOOL succeeded,
+                                                                                   NSError* error){
+        //  [self.headerView setLikeStatus:!succeeded];
+      
+       }];
+    }
    // }
 }
+
 @end

@@ -16,30 +16,11 @@
     [Parse setApplicationId:@"0pdsd1YNGJsEIdK1VrIe13TV9KYAjI3HSNImUECf"
                   clientKey:@"pfU85IYKLdWrGzhX1MLmaIwI2pllJCCPuhMecieg"];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
-    PFUser *currentUser = [PFUser currentUser];
-    if (currentUser) {
-       // [self refresh:nil];
-    } else {
-        // Dummy username and password
-        PFUser *user = [PFUser user];
-        user.username = @"Matt";
-        user.password = @"password";
-        user.email = @"Matt@example.com";
-        
-        [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-            if (!error) {
-             //   [self refresh:nil];
-            } else {
-                [PFUser logInWithUsername:@"Matt" password:@"password"];
-              //  [self refresh:nil];
-            }
-        }];
-    }
-
+   
+   
 
     return YES;
 }
-							
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

@@ -23,6 +23,7 @@
 @property (nonatomic, strong) id<OSHeaderViewDelegate> delegate;
 - (id)initWithRestaurant:(PFObject*)aRestaurant;
 + (CGRect)rectForView;
+-(void)setLikeStatus:(BOOL)liked;
 @end
 
 
