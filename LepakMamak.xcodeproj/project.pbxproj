@@ -37,6 +37,15 @@
 		FFA65D2417E88E6D00040AF9 /* OSCache.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA65D2317E88E6D00040AF9 /* OSCache.m */; };
 		FFA65D2717E899A900040AF9 /* OSHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA65D2617E899A900040AF9 /* OSHeaderView.m */; };
 		FFA65D2A17ED2D2700040AF9 /* OSLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA65D2917ED2D2500040AF9 /* OSLoginViewController.m */; };
+		FFA65D2D17EEA5F000040AF9 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA65D2C17EEA5EE00040AF9 /* SWRevealViewController.m */; };
+		FFA65D3017EEACAE00040AF9 /* OSSideBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA65D2F17EEACAB00040AF9 /* OSSideBarViewController.m */; };
+		FFA65D3217EF12CA00040AF9 /* map.png in Resources */ = {isa = PBXBuildFile; fileRef = FFA65D3117EF12CA00040AF9 /* map.png */; };
+		FFA65D3417EF130000040AF9 /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = FFA65D3317EF130000040AF9 /* heart.png */; };
+		FFA65D3617EF131100040AF9 /* help.png in Resources */ = {isa = PBXBuildFile; fileRef = FFA65D3517EF131100040AF9 /* help.png */; };
+		FFA65D3817EF132400040AF9 /* zoom.png in Resources */ = {isa = PBXBuildFile; fileRef = FFA65D3717EF132400040AF9 /* zoom.png */; };
+		FFA65D3F17EF302400040AF9 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = FFA65D3D17EF302400040AF9 /* menu.png */; };
+		FFA65D4017EF302400040AF9 /* menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFA65D3E17EF302400040AF9 /* menu@2x.png */; };
+		FFA65D4317EF3D0A00040AF9 /* OSSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA65D4217EF3D0800040AF9 /* OSSearchViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +91,18 @@
 		FFA65D2617E899A900040AF9 /* OSHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OSHeaderView.m; path = View/OSHeaderView.m; sourceTree = "<group>"; };
 		FFA65D2817ED2D2300040AF9 /* OSLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSLoginViewController.h; sourceTree = "<group>"; };
 		FFA65D2917ED2D2500040AF9 /* OSLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSLoginViewController.m; sourceTree = "<group>"; };
+		FFA65D2B17EEA5EC00040AF9 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		FFA65D2C17EEA5EE00040AF9 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		FFA65D2E17EEACAA00040AF9 /* OSSideBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSSideBarViewController.h; sourceTree = "<group>"; };
+		FFA65D2F17EEACAB00040AF9 /* OSSideBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSSideBarViewController.m; sourceTree = "<group>"; };
+		FFA65D3117EF12CA00040AF9 /* map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map.png; sourceTree = "<group>"; };
+		FFA65D3317EF130000040AF9 /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
+		FFA65D3517EF131100040AF9 /* help.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = help.png; sourceTree = "<group>"; };
+		FFA65D3717EF132400040AF9 /* zoom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zoom.png; sourceTree = "<group>"; };
+		FFA65D3D17EF302400040AF9 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
+		FFA65D3E17EF302400040AF9 /* menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu@2x.png"; sourceTree = "<group>"; };
+		FFA65D4117EF3D0600040AF9 /* OSSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSSearchViewController.h; sourceTree = "<group>"; };
+		FFA65D4217EF3D0800040AF9 /* OSSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSSearchViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +169,8 @@
 		FFA65CD317E543E800040AF9 /* LepakMamak */ = {
 			isa = PBXGroup;
 			children = (
+				FFA65D2B17EEA5EC00040AF9 /* SWRevealViewController.h */,
+				FFA65D2C17EEA5EE00040AF9 /* SWRevealViewController.m */,
 				FFA65D1A17E61C2300040AF9 /* View */,
 				FFA65D0B17E61B7200040AF9 /* Ressources */,
 				FFA65D0417E584F700040AF9 /* Utils */,
@@ -161,6 +184,10 @@
 				FFA65D0917E5C2F800040AF9 /* OSDetailViewController.m */,
 				FFA65D2817ED2D2300040AF9 /* OSLoginViewController.h */,
 				FFA65D2917ED2D2500040AF9 /* OSLoginViewController.m */,
+				FFA65D2E17EEACAA00040AF9 /* OSSideBarViewController.h */,
+				FFA65D2F17EEACAB00040AF9 /* OSSideBarViewController.m */,
+				FFA65D4117EF3D0600040AF9 /* OSSearchViewController.h */,
+				FFA65D4217EF3D0800040AF9 /* OSSearchViewController.m */,
 			);
 			path = LepakMamak;
 			sourceTree = "<group>";
@@ -205,6 +232,12 @@
 		FFA65D0C17E61B7C00040AF9 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				FFA65D3D17EF302400040AF9 /* menu.png */,
+				FFA65D3E17EF302400040AF9 /* menu@2x.png */,
+				FFA65D3717EF132400040AF9 /* zoom.png */,
+				FFA65D3517EF131100040AF9 /* help.png */,
+				FFA65D3317EF130000040AF9 /* heart.png */,
+				FFA65D3117EF12CA00040AF9 /* map.png */,
 				FFA65D1617E61BED00040AF9 /* textfieldComment.png */,
 				FFA65D1717E61BED00040AF9 /* textfieldComment@2x.png */,
 			);
@@ -279,6 +312,12 @@
 				FFA65CE717E543E800040AF9 /* MainStoryboard.storyboard in Resources */,
 				FFA65D1817E61BED00040AF9 /* textfieldComment.png in Resources */,
 				FFA65D1917E61BED00040AF9 /* textfieldComment@2x.png in Resources */,
+				FFA65D3217EF12CA00040AF9 /* map.png in Resources */,
+				FFA65D3417EF130000040AF9 /* heart.png in Resources */,
+				FFA65D3617EF131100040AF9 /* help.png in Resources */,
+				FFA65D3817EF132400040AF9 /* zoom.png in Resources */,
+				FFA65D3F17EF302400040AF9 /* menu.png in Resources */,
+				FFA65D4017EF302400040AF9 /* menu@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +338,9 @@
 				FFA65D2417E88E6D00040AF9 /* OSCache.m in Sources */,
 				FFA65D2717E899A900040AF9 /* OSHeaderView.m in Sources */,
 				FFA65D2A17ED2D2700040AF9 /* OSLoginViewController.m in Sources */,
+				FFA65D2D17EEA5F000040AF9 /* SWRevealViewController.m in Sources */,
+				FFA65D3017EEACAE00040AF9 /* OSSideBarViewController.m in Sources */,
+				FFA65D4317EF3D0A00040AF9 /* OSSearchViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,6 +432,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LepakMamak/LepakMamak-Prefix.pch";
 				INFOPLIST_FILE = "LepakMamak/LepakMamak-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -405,6 +448,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LepakMamak/LepakMamak-Prefix.pch";
 				INFOPLIST_FILE = "LepakMamak/LepakMamak-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

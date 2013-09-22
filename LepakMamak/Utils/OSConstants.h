@@ -24,3 +24,7 @@ extern NSString *const kOSRestaurantAttributesLikeCountKey;
 extern NSString *const kOSRestaurantAttributesLikersKey;
 extern NSString *const kOSRestaurantAttributesCommentCountKey;
 extern NSString *const kOSRestaurantAttributesCommentersKey;
+
+extern NSString * const kOSLocationKey;
+extern NSString * const kOSFilterDistanceChangeNotification ;
+extern NSString * const kOSLocationChangeNotification;

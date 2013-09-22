@@ -9,7 +9,11 @@
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 #import "OSLoginViewController.h"
-@interface OSViewController : PFQueryTableViewController<PFLogInViewControllerDelegate>
+#import "OSAppDelegate.h"
+#import <CoreLocation/CoreLocation.h>
+#import "SWRevealViewController.h"
+@interface OSViewController : PFQueryTableViewController<PFLogInViewControllerDelegate, CLLocationManagerDelegate>
 
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *sideBar;
 
 @end

@@ -9,7 +9,17 @@
 #import "OSAppDelegate.h"
 
 @implementation OSAppDelegate
+@synthesize filterDistance;
+@synthesize currentLocation;
 
+-(void)setCurrentLocation:(CLLocation *)aCurrentLocation{
+    currentLocation = aCurrentLocation;
+    NSDictionary *userInfo = [NSDictionary dictionaryWithObject:currentLocation forKey:kOSLocationKey];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [[NSNotificationCenter defaultCenter] postNotificationName:kOSLocationChangeNotification object:nil userInfo:userInfo];
+    });
+
+}
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.

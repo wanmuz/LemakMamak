@@ -28,3 +28,7 @@ NSString *const kOSRestaurantAttributesLikeCountKey            = @"likeCount";
 NSString *const kOSRestaurantAttributesLikersKey               = @"likers";
 NSString *const kOSRestaurantAttributesCommentCountKey         = @"commentCount";
 NSString *const kOSRestaurantAttributesCommentersKey           = @"commenters";
+
+NSString * const kOSLocationKey = @"location";
+NSString * const kOSFilterDistanceChangeNotification = @"kOSFilterDistanceChangeNotification";
+NSString * const kOSLocationChangeNotification = @"kOSLocationChangeNotification";
