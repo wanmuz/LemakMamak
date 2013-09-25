@@ -19,6 +19,12 @@ extern NSString *const kOSActivityTypeComment;
 extern NSString *const kOSActivityTypeLike;
 extern NSString *const kOSActivityRestaurantKey;
 
+
+extern NSString *const kOSRestaurantNameKey;
+extern NSString *const kOSRestaurantAddressKey;
+extern NSString *const kOSRestaurantWithWifiKey;
+extern NSString *const kOSRestaurantWithScreenKey;
+
 extern NSString *const kOSRestaurantAttributesIsLikedByCurrentUserKey;
 extern NSString *const kOSRestaurantAttributesLikeCountKey;
 extern NSString *const kOSRestaurantAttributesLikersKey;

@@ -46,6 +46,11 @@
 		FFA65D3F17EF302400040AF9 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = FFA65D3D17EF302400040AF9 /* menu.png */; };
 		FFA65D4017EF302400040AF9 /* menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFA65D3E17EF302400040AF9 /* menu@2x.png */; };
 		FFA65D4317EF3D0A00040AF9 /* OSSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA65D4217EF3D0800040AF9 /* OSSearchViewController.m */; };
+		FFA65D4617F07A1600040AF9 /* OSSearchResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA65D4517F07A1400040AF9 /* OSSearchResultViewController.m */; };
+		FFA65D4B17F1D6F400040AF9 /* cb_mono_off.png in Resources */ = {isa = PBXBuildFile; fileRef = FFA65D4717F1D6F400040AF9 /* cb_mono_off.png */; };
+		FFA65D4C17F1D6F400040AF9 /* cb_mono_off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFA65D4817F1D6F400040AF9 /* cb_mono_off@2x.png */; };
+		FFA65D4D17F1D6F400040AF9 /* cb_mono_on.png in Resources */ = {isa = PBXBuildFile; fileRef = FFA65D4917F1D6F400040AF9 /* cb_mono_on.png */; };
+		FFA65D4E17F1D6F400040AF9 /* cb_mono_on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFA65D4A17F1D6F400040AF9 /* cb_mono_on@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -103,6 +108,12 @@
 		FFA65D3E17EF302400040AF9 /* menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu@2x.png"; sourceTree = "<group>"; };
 		FFA65D4117EF3D0600040AF9 /* OSSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSSearchViewController.h; sourceTree = "<group>"; };
 		FFA65D4217EF3D0800040AF9 /* OSSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSSearchViewController.m; sourceTree = "<group>"; };
+		FFA65D4417F07A1200040AF9 /* OSSearchResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSSearchResultViewController.h; sourceTree = "<group>"; };
+		FFA65D4517F07A1400040AF9 /* OSSearchResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSSearchResultViewController.m; sourceTree = "<group>"; };
+		FFA65D4717F1D6F400040AF9 /* cb_mono_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cb_mono_off.png; sourceTree = "<group>"; };
+		FFA65D4817F1D6F400040AF9 /* cb_mono_off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cb_mono_off@2x.png"; sourceTree = "<group>"; };
+		FFA65D4917F1D6F400040AF9 /* cb_mono_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cb_mono_on.png; sourceTree = "<group>"; };
+		FFA65D4A17F1D6F400040AF9 /* cb_mono_on@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cb_mono_on@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +199,8 @@
 				FFA65D2F17EEACAB00040AF9 /* OSSideBarViewController.m */,
 				FFA65D4117EF3D0600040AF9 /* OSSearchViewController.h */,
 				FFA65D4217EF3D0800040AF9 /* OSSearchViewController.m */,
+				FFA65D4417F07A1200040AF9 /* OSSearchResultViewController.h */,
+				FFA65D4517F07A1400040AF9 /* OSSearchResultViewController.m */,
 			);
 			path = LepakMamak;
 			sourceTree = "<group>";
@@ -232,6 +245,10 @@
 		FFA65D0C17E61B7C00040AF9 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				FFA65D4717F1D6F400040AF9 /* cb_mono_off.png */,
+				FFA65D4817F1D6F400040AF9 /* cb_mono_off@2x.png */,
+				FFA65D4917F1D6F400040AF9 /* cb_mono_on.png */,
+				FFA65D4A17F1D6F400040AF9 /* cb_mono_on@2x.png */,
 				FFA65D3D17EF302400040AF9 /* menu.png */,
 				FFA65D3E17EF302400040AF9 /* menu@2x.png */,
 				FFA65D3717EF132400040AF9 /* zoom.png */,
@@ -318,6 +335,10 @@
 				FFA65D3817EF132400040AF9 /* zoom.png in Resources */,
 				FFA65D3F17EF302400040AF9 /* menu.png in Resources */,
 				FFA65D4017EF302400040AF9 /* menu@2x.png in Resources */,
+				FFA65D4B17F1D6F400040AF9 /* cb_mono_off.png in Resources */,
+				FFA65D4C17F1D6F400040AF9 /* cb_mono_off@2x.png in Resources */,
+				FFA65D4D17F1D6F400040AF9 /* cb_mono_on.png in Resources */,
+				FFA65D4E17F1D6F400040AF9 /* cb_mono_on@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +362,7 @@
 				FFA65D2D17EEA5F000040AF9 /* SWRevealViewController.m in Sources */,
 				FFA65D3017EEACAE00040AF9 /* OSSideBarViewController.m in Sources */,
 				FFA65D4317EF3D0A00040AF9 /* OSSearchViewController.m in Sources */,
+				FFA65D4617F07A1600040AF9 /* OSSearchResultViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

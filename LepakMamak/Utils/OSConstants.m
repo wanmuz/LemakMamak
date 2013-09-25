@@ -21,6 +21,11 @@ NSString *const kOSPActivityContentKey= @"content";
 NSString *const kOSPActivityFromUserKey=@"fromUser";
 NSString *const kOSActivityRestaurantKey=@"restaurant";
 
+
+NSString *const kOSRestaurantNameKey = @"name";
+NSString *const kOSRestaurantAddressKey = @"address";
+NSString *const kOSRestaurantWithWifiKey=@"withWifi";
+NSString *const kOSRestaurantWithScreenKey=@"withScreen";
 #pragma mark - Cached Photo Attributes
 // keys
 NSString *const kOSRestaurantAttributesIsLikedByCurrentUserKey = @"isLikedByCurrentUser";
