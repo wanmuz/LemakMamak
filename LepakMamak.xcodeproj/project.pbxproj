@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FF8A54D517F5AA0B00B2E6E5 /* OSEditPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8A54D417F5AA0B00B2E6E5 /* OSEditPhotoViewController.m */; };
+		FF8A54D717F5B3D200B2E6E5 /* OSEditPhotoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF8A54D617F5B3D200B2E6E5 /* OSEditPhotoViewController.xib */; };
+		FF8A54DC17F5CDBA00B2E6E5 /* UIImage+ResizeAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8A54DB17F5CDBA00B2E6E5 /* UIImage+ResizeAdditions.m */; };
+		FF8A54E117F5CE2D00B2E6E5 /* UIImage+AlphaAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8A54DE17F5CE2D00B2E6E5 /* UIImage+AlphaAdditions.m */; };
+		FF8A54E217F5CE2D00B2E6E5 /* UIImage+RoundedCornerAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8A54E017F5CE2D00B2E6E5 /* UIImage+RoundedCornerAdditions.m */; };
+		FF8A552917F99FFC00B2E6E5 /* KICamera.png in Resources */ = {isa = PBXBuildFile; fileRef = FF8A552517F99FFC00B2E6E5 /* KICamera.png */; };
+		FF8A552A17F99FFC00B2E6E5 /* KICamera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FF8A552617F99FFC00B2E6E5 /* KICamera@2x.png */; };
+		FF8A552B17F99FFC00B2E6E5 /* KIImagePager.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8A552817F99FFC00B2E6E5 /* KIImagePager.m */; };
+		FF8A552D17F9CC3500B2E6E5 /* placeholder.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FF8A552C17F9CC3500B2E6E5 /* placeholder.jpg */; };
 		FFA65CCE17E543E800040AF9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFA65CCD17E543E800040AF9 /* UIKit.framework */; };
 		FFA65CD017E543E800040AF9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFA65CCF17E543E800040AF9 /* Foundation.framework */; };
 		FFA65CD217E543E800040AF9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFA65CD117E543E800040AF9 /* CoreGraphics.framework */; };
@@ -54,6 +63,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FF8A54D317F5AA0B00B2E6E5 /* OSEditPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSEditPhotoViewController.h; sourceTree = "<group>"; };
+		FF8A54D417F5AA0B00B2E6E5 /* OSEditPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSEditPhotoViewController.m; sourceTree = "<group>"; };
+		FF8A54D617F5B3D200B2E6E5 /* OSEditPhotoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OSEditPhotoViewController.xib; sourceTree = "<group>"; };
+		FF8A54DA17F5CDBA00B2E6E5 /* UIImage+ResizeAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+ResizeAdditions.h"; path = "External/UIImage+ResizeAdditions.h"; sourceTree = "<group>"; };
+		FF8A54DB17F5CDBA00B2E6E5 /* UIImage+ResizeAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+ResizeAdditions.m"; path = "External/UIImage+ResizeAdditions.m"; sourceTree = "<group>"; };
+		FF8A54DD17F5CE2D00B2E6E5 /* UIImage+AlphaAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+AlphaAdditions.h"; sourceTree = "<group>"; };
+		FF8A54DE17F5CE2D00B2E6E5 /* UIImage+AlphaAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+AlphaAdditions.m"; sourceTree = "<group>"; };
+		FF8A54DF17F5CE2D00B2E6E5 /* UIImage+RoundedCornerAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+RoundedCornerAdditions.h"; sourceTree = "<group>"; };
+		FF8A54E017F5CE2D00B2E6E5 /* UIImage+RoundedCornerAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RoundedCornerAdditions.m"; sourceTree = "<group>"; };
+		FF8A552517F99FFC00B2E6E5 /* KICamera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = KICamera.png; sourceTree = "<group>"; };
+		FF8A552617F99FFC00B2E6E5 /* KICamera@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "KICamera@2x.png"; sourceTree = "<group>"; };
+		FF8A552717F99FFC00B2E6E5 /* KIImagePager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KIImagePager.h; sourceTree = "<group>"; };
+		FF8A552817F99FFC00B2E6E5 /* KIImagePager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KIImagePager.m; sourceTree = "<group>"; };
+		FF8A552C17F9CC3500B2E6E5 /* placeholder.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = placeholder.jpg; sourceTree = "<group>"; };
 		FFA65CCA17E543E800040AF9 /* LepakMamak.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LepakMamak.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFA65CCD17E543E800040AF9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FFA65CCF17E543E800040AF9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -140,6 +163,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FF8A54D917F5CD4900B2E6E5 /* External */ = {
+			isa = PBXGroup;
+			children = (
+				FF8A54DD17F5CE2D00B2E6E5 /* UIImage+AlphaAdditions.h */,
+				FF8A54DE17F5CE2D00B2E6E5 /* UIImage+AlphaAdditions.m */,
+				FF8A54DF17F5CE2D00B2E6E5 /* UIImage+RoundedCornerAdditions.h */,
+				FF8A54E017F5CE2D00B2E6E5 /* UIImage+RoundedCornerAdditions.m */,
+				FF8A54DA17F5CDBA00B2E6E5 /* UIImage+ResizeAdditions.h */,
+				FF8A54DB17F5CDBA00B2E6E5 /* UIImage+ResizeAdditions.m */,
+			);
+			name = External;
+			sourceTree = "<group>";
+		};
+		FF8A552417F99FFC00B2E6E5 /* KIImagePager */ = {
+			isa = PBXGroup;
+			children = (
+				FF8A552517F99FFC00B2E6E5 /* KICamera.png */,
+				FF8A552617F99FFC00B2E6E5 /* KICamera@2x.png */,
+				FF8A552717F99FFC00B2E6E5 /* KIImagePager.h */,
+				FF8A552817F99FFC00B2E6E5 /* KIImagePager.m */,
+			);
+			path = KIImagePager;
+			sourceTree = "<group>";
+		};
 		FFA65CC117E543E700040AF9 = {
 			isa = PBXGroup;
 			children = (
@@ -180,7 +227,9 @@
 		FFA65CD317E543E800040AF9 /* LepakMamak */ = {
 			isa = PBXGroup;
 			children = (
+				FF8A54D617F5B3D200B2E6E5 /* OSEditPhotoViewController.xib */,
 				FFA65D2B17EEA5EC00040AF9 /* SWRevealViewController.h */,
+				FF8A54D917F5CD4900B2E6E5 /* External */,
 				FFA65D2C17EEA5EE00040AF9 /* SWRevealViewController.m */,
 				FFA65D1A17E61C2300040AF9 /* View */,
 				FFA65D0B17E61B7200040AF9 /* Ressources */,
@@ -201,6 +250,8 @@
 				FFA65D4217EF3D0800040AF9 /* OSSearchViewController.m */,
 				FFA65D4417F07A1200040AF9 /* OSSearchResultViewController.h */,
 				FFA65D4517F07A1400040AF9 /* OSSearchResultViewController.m */,
+				FF8A54D317F5AA0B00B2E6E5 /* OSEditPhotoViewController.h */,
+				FF8A54D417F5AA0B00B2E6E5 /* OSEditPhotoViewController.m */,
 			);
 			path = LepakMamak;
 			sourceTree = "<group>";
@@ -222,6 +273,7 @@
 		FFA65D0417E584F700040AF9 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				FF8A552417F99FFC00B2E6E5 /* KIImagePager */,
 				FFA65D1B17E6A9F100040AF9 /* MBProgressHUD.h */,
 				FFA65D1C17E6A9F100040AF9 /* MBProgressHUD.m */,
 				FFA65D0517E585C100040AF9 /* OSConstants.h */,
@@ -237,6 +289,7 @@
 		FFA65D0B17E61B7200040AF9 /* Ressources */ = {
 			isa = PBXGroup;
 			children = (
+				FF8A552C17F9CC3500B2E6E5 /* placeholder.jpg */,
 				FFA65D0C17E61B7C00040AF9 /* Images */,
 			);
 			name = Ressources;
@@ -339,6 +392,10 @@
 				FFA65D4C17F1D6F400040AF9 /* cb_mono_off@2x.png in Resources */,
 				FFA65D4D17F1D6F400040AF9 /* cb_mono_on.png in Resources */,
 				FFA65D4E17F1D6F400040AF9 /* cb_mono_on@2x.png in Resources */,
+				FF8A54D717F5B3D200B2E6E5 /* OSEditPhotoViewController.xib in Resources */,
+				FF8A552917F99FFC00B2E6E5 /* KICamera.png in Resources */,
+				FF8A552A17F99FFC00B2E6E5 /* KICamera@2x.png in Resources */,
+				FF8A552D17F9CC3500B2E6E5 /* placeholder.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,6 +420,11 @@
 				FFA65D3017EEACAE00040AF9 /* OSSideBarViewController.m in Sources */,
 				FFA65D4317EF3D0A00040AF9 /* OSSearchViewController.m in Sources */,
 				FFA65D4617F07A1600040AF9 /* OSSearchResultViewController.m in Sources */,
+				FF8A54D517F5AA0B00B2E6E5 /* OSEditPhotoViewController.m in Sources */,
+				FF8A54DC17F5CDBA00B2E6E5 /* UIImage+ResizeAdditions.m in Sources */,
+				FF8A54E117F5CE2D00B2E6E5 /* UIImage+AlphaAdditions.m in Sources */,
+				FF8A54E217F5CE2D00B2E6E5 /* UIImage+RoundedCornerAdditions.m in Sources */,
+				FF8A552B17F99FFC00B2E6E5 /* KIImagePager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,7 +462,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Hou Ho Sii (PQ9A74J5J5)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Hou Ho Sii (PQ9A74J5J5)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -413,8 +476,10 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "065FD069-6725-4AE5-99EE-FCB41E941A58";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "065FD069-6725-4AE5-99EE-FCB41E941A58";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -431,14 +496,17 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Hou Ho Sii (PQ9A74J5J5)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Hou Ho Sii (PQ9A74J5J5)";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "065FD069-6725-4AE5-99EE-FCB41E941A58";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "065FD069-6725-4AE5-99EE-FCB41E941A58";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -447,6 +515,8 @@
 		FFA65CEE17E543E800040AF9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Hou Ho Sii (PQ9A74J5J5)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Hou Ho Sii (PQ9A74J5J5)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -456,6 +526,8 @@
 				INFOPLIST_FILE = "LepakMamak/LepakMamak-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "065FD069-6725-4AE5-99EE-FCB41E941A58";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "065FD069-6725-4AE5-99EE-FCB41E941A58";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -463,6 +535,8 @@
 		FFA65CEF17E543E800040AF9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Hou Ho Sii (PQ9A74J5J5)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Hou Ho Sii (PQ9A74J5J5)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -472,6 +546,8 @@
 				INFOPLIST_FILE = "LepakMamak/LepakMamak-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "065FD069-6725-4AE5-99EE-FCB41E941A58";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "065FD069-6725-4AE5-99EE-FCB41E941A58";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -495,6 +571,7 @@
 				FFA65CEF17E543E800040AF9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

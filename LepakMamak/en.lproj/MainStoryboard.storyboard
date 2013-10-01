@@ -105,15 +105,41 @@
                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hrg-RW-dtz">
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                    <state key="normal" title="Add image">
+                                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="highlighted">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="cameraButtonPressed:" destination="HMD-gi-mG0" eventType="touchUpInside" id="JTG-5V-Phj"/>
+                                    </connections>
+                                </button>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s9n-2g-RCH" customClass="KIImagePager">
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    <connections>
+                                        <outlet property="dataSource" destination="HMD-gi-mG0" id="6wL-D5-aQb"/>
+                                        <outlet property="delegate" destination="HMD-gi-mG0" id="F75-fc-wcx"/>
+                                    </connections>
+                                </view>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstItem="cd9-fl-sfB" firstAttribute="centerX" secondItem="W6w-Fr-cWb" secondAttribute="centerX" type="default" id="7rd-7v-2h6"/>
-                                <constraint firstAttribute="bottom" secondItem="KbC-fu-xIx" secondAttribute="bottom" constant="12" id="LVQ-QS-oaJ"/>
+                                <constraint firstItem="hrg-RW-dtz" firstAttribute="baseline" secondItem="KbC-fu-xIx" secondAttribute="baseline" type="default" id="5nS-BQ-oTg"/>
+                                <constraint firstItem="cd9-fl-sfB" firstAttribute="trailing" secondItem="hrg-RW-dtz" secondAttribute="trailing" type="default" id="6T5-YH-LbQ"/>
+                                <constraint firstItem="KbC-fu-xIx" firstAttribute="baseline" secondItem="sts-N8-b6f" secondAttribute="baseline" type="default" id="Aqj-WW-xXI"/>
                                 <constraint firstItem="KbC-fu-xIx" firstAttribute="leading" secondItem="W6w-Fr-cWb" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="PWs-FJ-5Xx"/>
-                                <constraint firstItem="sts-N8-b6f" firstAttribute="top" secondItem="W6w-Fr-cWb" secondAttribute="top" constant="70" id="fMM-bq-LeS"/>
-                                <constraint firstItem="sts-N8-b6f" firstAttribute="leading" secondItem="cd9-fl-sfB" secondAttribute="leading" type="default" id="hF7-6x-1HU"/>
-                                <constraint firstItem="cd9-fl-sfB" firstAttribute="top" secondItem="W6w-Fr-cWb" secondAttribute="top" constant="31" id="iF7-ln-9zM"/>
+                                <constraint firstItem="cd9-fl-sfB" firstAttribute="leading" secondItem="W6w-Fr-cWb" secondAttribute="leading" constant="11" id="T7J-Jg-05Z"/>
+                                <constraint firstItem="s9n-2g-RCH" firstAttribute="leading" secondItem="W6w-Fr-cWb" secondAttribute="leading" type="default" id="Xsp-JN-7ge"/>
+                                <constraint firstItem="s9n-2g-RCH" firstAttribute="top" secondItem="W6w-Fr-cWb" secondAttribute="top" constant="1" id="bk1-ij-t5b"/>
+                                <constraint firstItem="s9n-2g-RCH" firstAttribute="trailing" secondItem="W6w-Fr-cWb" secondAttribute="trailing" type="default" id="hva-91-8qn"/>
+                                <constraint firstItem="sts-N8-b6f" firstAttribute="leading" secondItem="W6w-Fr-cWb" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="mAw-Ig-xH1"/>
+                                <constraint firstAttribute="bottom" secondItem="cd9-fl-sfB" secondAttribute="bottom" constant="110" id="nRt-LE-YRB"/>
+                                <constraint firstItem="sts-N8-b6f" firstAttribute="top" secondItem="W6w-Fr-cWb" secondAttribute="top" constant="143" id="uyP-8m-GdC"/>
+                                <constraint firstAttribute="bottom" secondItem="s9n-2g-RCH" secondAttribute="bottom" constant="148" id="vNx-ht-SBB"/>
                             </constraints>
                             <connections>
                                 <outlet property="addressLabel" destination="sts-N8-b6f" id="nDz-V1-6vU"/>
@@ -181,6 +207,7 @@
                     </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="headerView" destination="W6w-Fr-cWb" id="kLX-A1-nVr"/>
+                        <outlet property="imagePager" destination="s9n-2g-RCH" id="EgA-g8-BZe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hAt-WR-qse" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -392,7 +419,6 @@
         <!--Search View Controller-->
         <scene sceneID="MSJ-yn-1Y2">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qun-pN-SXk" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="JKN-3e-nD2" customClass="OSSearchViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oGY-Po-iS0">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
@@ -452,9 +478,6 @@
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="With Wifi" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wkx-4n-fLJ">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="eYs-3l-hjh"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -486,7 +509,6 @@
                             <constraint firstItem="4gS-0x-9ay" firstAttribute="top" secondItem="oGY-Po-iS0" secondAttribute="top" constant="132" id="0Aa-E6-c7n"/>
                             <constraint firstItem="uc6-Rm-ThW" firstAttribute="leading" secondItem="cSH-6u-5ty" secondAttribute="leading" type="default" id="15g-8s-uc9"/>
                             <constraint firstItem="wmC-sD-FUl" firstAttribute="leading" secondItem="oGY-Po-iS0" secondAttribute="leading" constant="15" id="2VA-b0-JPa"/>
-                            <constraint firstItem="wkx-4n-fLJ" firstAttribute="centerY" secondItem="cSH-6u-5ty" secondAttribute="centerY" type="default" id="JIf-BO-ghx"/>
                             <constraint firstItem="Tcy-gl-Cec" firstAttribute="leading" secondItem="tA6-t2-gN9" secondAttribute="leading" type="default" id="O8c-qa-jwI"/>
                             <constraint firstItem="uc6-Rm-ThW" firstAttribute="trailing" secondItem="cSH-6u-5ty" secondAttribute="trailing" type="default" id="Od8-BV-pkW"/>
                             <constraint firstItem="cSH-6u-5ty" firstAttribute="top" secondItem="wkx-4n-fLJ" secondAttribute="top" type="default" id="Rk1-Ho-vWw"/>
@@ -515,6 +537,7 @@
                         <outlet property="wifiButton" destination="cSH-6u-5ty" id="m8G-vW-dbC"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qun-pN-SXk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="381" y="-836"/>
         </scene>
@@ -567,13 +590,22 @@
         <image name="zoom.png" width="64" height="64"/>
     </resources>
     <classes>
+        <class className="KIImagePager" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/KIImagePager.h"/>
+            <relationships>
+                <relationship kind="outlet" name="dataSource"/>
+                <relationship kind="outlet" name="delegate"/>
+            </relationships>
+        </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
         </class>
         <class className="OSDetailViewController" superclassName="PFQueryTableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OSDetailViewController.h"/>
             <relationships>
+                <relationship kind="action" name="cameraButtonPressed:"/>
                 <relationship kind="outlet" name="headerView" candidateClass="OSHeaderView"/>
+                <relationship kind="outlet" name="imagePager" candidateClass="KIImagePager"/>
             </relationships>
         </class>
         <class className="OSHeaderView" superclassName="UIView">

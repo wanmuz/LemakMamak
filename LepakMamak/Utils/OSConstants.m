@@ -11,6 +11,7 @@
 NSString *const  kOSActivityClassName = @"Restaurant";
 
 NSString *const kOSActivityClassKey = @"Activity";
+NSString *const kOSPhotoClassKey=@"Photo";
 
 //Type values
 NSString *const kOSActivityTypeComment = @"comment";
@@ -37,3 +38,8 @@ NSString *const kOSRestaurantAttributesCommentersKey           = @"commenters";
 NSString * const kOSLocationKey = @"location";
 NSString * const kOSFilterDistanceChangeNotification = @"kOSFilterDistanceChangeNotification";
 NSString * const kOSLocationChangeNotification = @"kOSLocationChangeNotification";
+
+NSString *const kOSPhotoUserKey = @"user";
+NSString *const kOSPhotoPictureKey = @"image";
+NSString *const kOSPhotoThumbnailKey=@"thumbnail";
+NSString *const kOSPhotoRestaurantKey=@"restaurant";

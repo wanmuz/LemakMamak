@@ -11,6 +11,7 @@
 #import "MBProgressHUD.h"
 @interface OSDetailViewController ()
 @property (nonatomic, strong) IBOutlet OSHeaderView *headerView;
+@property (nonatomic, strong) NSArray *restaurantImageInfos;
 @end
 
 @implementation OSDetailViewController
@@ -29,7 +30,8 @@
     [super viewDidLoad];
     
     //Set table header
-    
+    self.restaurantImageInfos=[[NSMutableArray alloc] initWithObjects:[UIImage imageNamed:@"placeholder.jpg"], nil];
+    self.imagePager.indicatorDisabled=YES;
     self.headerView.restaurant = restaurant;
     headerView.delegate = self;
     NSDictionary *attributesForRestau = [[OSCache sharedCache] attributesForRestaurant:restaurant];
@@ -67,17 +69,39 @@
         
     
         }
-
+     [self getRestaurantImages];
     [ self.headerView.likeButton setTitle:[[[OSCache sharedCache] likeCountForRestaurant:restaurant] description]forState:UIControlStateNormal];
 	// Do any additional setup after loading the view.
 }
-
+-(void) viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    _imagePager.pageControl.currentPageIndicatorTintColor = [UIColor lightGrayColor];
+    _imagePager.pageControl.pageIndicatorTintColor = [UIColor blackColor];
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+-(void)getRestaurantImages{
+    PFQuery *query = [PFQuery queryWithClassName:kOSPhotoClassKey];
+    [query whereKey:kOSPhotoUserKey equalTo:[PFUser currentUser]];
+     [query whereKey:kOSPhotoRestaurantKey equalTo:self.restaurant];
+   [query findObjectsInBackgroundWithBlock:^(NSArray *obj, NSError *error){
+       if(!error){
+           NSMutableArray *arrayTemp = [[NSMutableArray alloc] init];
+               for (PFObject *object in obj)
+               {
+                   PFFile *tempFile=[object objectForKey:kOSPhotoPictureKey ];
+                   [arrayTemp addObject:tempFile.url];
+               }
+           self.restaurantImageInfos=arrayTemp;
+           self.imagePager.indicatorDisabled=NO;
+           [self.imagePager reloadData];
+       }
+    }];
+    
+}
 -(UITableViewCell*)tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath object:(PFObject *)object{
     static NSString *cellId = @"CommentCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
@@ -89,7 +113,16 @@ cell.textLabel.text = [object valueForKey:kOSPActivityContentKey];
 cell.detailTextLabel.text = [object valueForKey:@"updated_at"];
     return cell;
 }
-
+#pragma mark - KIImagePager DataSource
+- (NSArray *) arrayWithImages
+{
+    return self.restaurantImageInfos;
+    
+}
+- (UIViewContentMode) contentModeForImage:(NSUInteger)image
+{
+    return UIViewContentModeScaleAspectFill;
+}
 #pragma mark - PFQueryTableViewController
 
 -(PFQuery *)queryForTable{
@@ -167,4 +200,78 @@ cell.detailTextLabel.text = [object valueForKey:@"updated_at"];
    // }
 }
 
+#pragma mark - ()
+
+- (IBAction)cameraButtonPressed:(id)sender {
+    BOOL cameraDeviceAvailable = [UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera];
+    BOOL photoLibraryAvailable = [UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary];
+    if (cameraDeviceAvailable && photoLibraryAvailable){
+        UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Take Photo", @"Choose photo",nil];
+        [actionSheet showInView:self.view];
+    }
+}
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (buttonIndex == 0){
+        [self shouldStartCameraController];
+    }else if (buttonIndex == 1){
+        [self shouldStartPhotoLibraryPickerController];
+    }
+}
+-(BOOL)shouldStartPhotoLibraryPickerController{
+    if (([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary] == NO && [UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeSavedPhotosAlbum] == NO)){
+        return NO;
+    }
+    UIImagePickerController *cameraUI = [[UIImagePickerController alloc] init];
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary] && [[UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypePhotoLibrary] containsObject:(NSString*)kUTTypeImage]){
+        cameraUI.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        cameraUI.mediaTypes = [NSArray arrayWithObject:(NSString*)kUTTypeImage];
+    }else if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeSavedPhotosAlbum] && [[UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypeSavedPhotosAlbum] containsObject:(NSString*)kUTTypeImage]){
+        cameraUI.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+        cameraUI.mediaTypes= [NSArray arrayWithObject:(NSString*)kUTTypeImage];
+    }
+    else{
+        return NO;
+    }
+    cameraUI.allowsEditing = YES;
+    cameraUI.delegate = self;
+    [self presentViewController:cameraUI animated:YES completion:nil];
+    return YES;
+}
+-(BOOL)shouldStartCameraController{
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]== NO){
+        return NO;
+    }
+    UIImagePickerController *cameraUI = [[UIImagePickerController alloc]init];
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera] && [[UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypeCamera] containsObject:(NSString*)kUTTypeImage]){
+        cameraUI.sourceType = UIImagePickerControllerSourceTypeCamera;
+        cameraUI.mediaTypes = [NSArray arrayWithObject:(NSString*)kUTTypeImage];
+        if ([UIImagePickerController isCameraDeviceAvailable:UIImagePickerControllerCameraDeviceRear]){
+            cameraUI.cameraDevice = UIImagePickerControllerCameraDeviceRear;
+        }else if ([UIImagePickerController isCameraDeviceAvailable:UIImagePickerControllerCameraDeviceFront]){
+            cameraUI.cameraDevice = UIImagePickerControllerCameraDeviceFront;
+        }
+        
+    }else{
+        return NO;
+    }
+    cameraUI.allowsEditing = YES;
+    cameraUI.showsCameraControls = YES;
+    cameraUI.delegate = self;
+    [self presentViewController:cameraUI animated:YES completion:nil];
+    return YES;
+}
+#pragma mark - UIImagePickerDelegate
+
+-(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
+    [self dismissViewControllerAnimated:YES completion:nil];
+    UIImage *image = [info objectForKey:UIImagePickerControllerEditedImage];
+    OSEditPhotoViewController *viewController = [[OSEditPhotoViewController alloc] initWithImage:image];
+    viewController.restaurant = self.restaurant;
+   // [self.navigationController setModalPresentationStyle:UIModalTransitionStyleCrossDissolve];
+  //  [self.navigationController pushViewController:viewController animated:NO];
+    [self.navigationController pushViewController:viewController animated:YES];
+}
 @end

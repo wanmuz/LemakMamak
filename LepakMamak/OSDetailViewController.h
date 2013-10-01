@@ -11,8 +11,13 @@
 #import "OSHeaderView.h"
 #import "OSCache.h"
 #import "OSUtility.h"
-@interface OSDetailViewController : PFQueryTableViewController<UITextFieldDelegate, OSHeaderViewDelegate>
+#import <MobileCoreServices/MobileCoreServices.h> 
+#import "OSEditPhotoViewController.h"
+#import "KIImagePager.h"
+@interface OSDetailViewController : PFQueryTableViewController<UITextFieldDelegate, OSHeaderViewDelegate, UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (nonatomic, strong) PFObject *restaurant;
+@property (weak, nonatomic) IBOutlet KIImagePager *imagePager;
 
+- (IBAction)cameraButtonPressed:(id)sender;
 
 @end

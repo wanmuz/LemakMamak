@@ -11,7 +11,7 @@
 extern NSString *const kOSActivityClassName;
 
 extern NSString *const kOSActivityClassKey;
-
+extern NSString *const kOSPhotoClassKey;
 extern NSString *const kOSActivityTypeKey ;
 extern NSString *const kOSPActivityContentKey;
 extern NSString *const kOSPActivityFromUserKey;
@@ -34,3 +34,8 @@ extern NSString *const kOSRestaurantAttributesCommentersKey;
 extern NSString * const kOSLocationKey;
 extern NSString * const kOSFilterDistanceChangeNotification ;
 extern NSString * const kOSLocationChangeNotification;
+
+extern NSString *const kOSPhotoUserKey;
+extern NSString *const kOSPhotoPictureKey;
+extern NSString *const kOSPhotoThumbnailKey;
+extern NSString *const kOSPhotoRestaurantKey;
