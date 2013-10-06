@@ -89,6 +89,7 @@
      [query whereKey:kOSPhotoRestaurantKey equalTo:self.restaurant];
    [query findObjectsInBackgroundWithBlock:^(NSArray *obj, NSError *error){
        if(!error){
+           if ([obj count]>0){
            NSMutableArray *arrayTemp = [[NSMutableArray alloc] init];
                for (PFObject *object in obj)
                {
@@ -98,6 +99,7 @@
            self.restaurantImageInfos=arrayTemp;
            self.imagePager.indicatorDisabled=NO;
            [self.imagePager reloadData];
+           }
        }
     }];
     

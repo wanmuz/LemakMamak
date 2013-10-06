@@ -12,9 +12,11 @@
 #import "OSAppDelegate.h"
 #import <CoreLocation/CoreLocation.h>
 #import "SWRevealViewController.h"
-
-@interface OSViewController : PFQueryTableViewController<PFLogInViewControllerDelegate, CLLocationManagerDelegate>
+#import <MapKit/MapKit.h>
+#import "OSWRestaurant.h"
+@interface OSViewController : PFQueryTableViewController<PFLogInViewControllerDelegate, MKMapViewDelegate, CLLocationManagerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sideBar;
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
 
 @end

@@ -12,9 +12,23 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="9Oo-sV-cJI">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="182"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1E8-3r-JWM"/>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="1E8-3r-JWM" firstAttribute="top" secondItem="9Oo-sV-cJI" secondAttribute="top" type="default" id="GUJ-VZ-q4Q"/>
+                                <constraint firstItem="1E8-3r-JWM" firstAttribute="trailing" secondItem="9Oo-sV-cJI" secondAttribute="trailing" type="default" id="WLn-3X-8Wh"/>
+                                <constraint firstItem="1E8-3r-JWM" firstAttribute="leading" secondItem="9Oo-sV-cJI" secondAttribute="leading" type="default" id="YUU-Ae-2SQ"/>
+                                <constraint firstItem="1E8-3r-JWM" firstAttribute="bottom" secondItem="9Oo-sV-cJI" secondAttribute="bottom" type="default" id="gFL-UE-ujH"/>
+                            </constraints>
+                        </view>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="restaurantCell" textLabel="6LM-gD-w9d" detailTextLabel="CoL-4c-Idh" rowHeight="72" style="IBUITableViewCellStyleSubtitle" id="6EI-xM-qiM">
-                                <rect key="frame" x="0.0" y="22" width="320" height="72"/>
+                                <rect key="frame" x="0.0" y="204" width="320" height="72"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="300" height="71"/>
@@ -55,6 +69,7 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
+                        <outlet property="mapView" destination="1E8-3r-JWM" id="LqL-1b-4xi"/>
                         <outlet property="sideBar" destination="Qvz-iN-fWd" id="wwz-Xo-YcL"/>
                     </connections>
                 </viewController>
@@ -635,6 +650,7 @@
         <class className="OSViewController" superclassName="PFQueryTableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/OSViewController.h"/>
             <relationships>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
                 <relationship kind="outlet" name="sideBar" candidateClass="UIBarButtonItem"/>
             </relationships>
         </class>

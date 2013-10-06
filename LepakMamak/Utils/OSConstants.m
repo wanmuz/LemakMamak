@@ -43,3 +43,5 @@ NSString *const kOSPhotoUserKey = @"user";
 NSString *const kOSPhotoPictureKey = @"image";
 NSString *const kOSPhotoThumbnailKey=@"thumbnail";
 NSString *const kOSPhotoRestaurantKey=@"restaurant";
+
+NSString *const kOSCantViewRestaurant=@"No restaurant within the range. Get closer.";

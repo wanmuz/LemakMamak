@@ -39,3 +39,5 @@ extern NSString *const kOSPhotoUserKey;
 extern NSString *const kOSPhotoPictureKey;
 extern NSString *const kOSPhotoThumbnailKey;
 extern NSString *const kOSPhotoRestaurantKey;
+
+extern NSString *const kOSCantViewRestaurant;

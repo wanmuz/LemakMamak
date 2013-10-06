@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FF438AA418005C7C0069C27B /* serdang.gpx in Resources */ = {isa = PBXBuildFile; fileRef = FF438AA318005C7C0069C27B /* serdang.gpx */; };
 		FF8A54D517F5AA0B00B2E6E5 /* OSEditPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8A54D417F5AA0B00B2E6E5 /* OSEditPhotoViewController.m */; };
 		FF8A54D717F5B3D200B2E6E5 /* OSEditPhotoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF8A54D617F5B3D200B2E6E5 /* OSEditPhotoViewController.xib */; };
 		FF8A54DC17F5CDBA00B2E6E5 /* UIImage+ResizeAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8A54DB17F5CDBA00B2E6E5 /* UIImage+ResizeAdditions.m */; };
@@ -16,6 +17,8 @@
 		FF8A552A17F99FFC00B2E6E5 /* KICamera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FF8A552617F99FFC00B2E6E5 /* KICamera@2x.png */; };
 		FF8A552B17F99FFC00B2E6E5 /* KIImagePager.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8A552817F99FFC00B2E6E5 /* KIImagePager.m */; };
 		FF8A552D17F9CC3500B2E6E5 /* placeholder.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FF8A552C17F9CC3500B2E6E5 /* placeholder.jpg */; };
+		FF8A552F17FC5CF000B2E6E5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF8A552E17FC5CF000B2E6E5 /* MapKit.framework */; };
+		FF8A553217FDB13100B2E6E5 /* OSWRestaurant.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8A553117FDB13000B2E6E5 /* OSWRestaurant.m */; };
 		FFA65CCE17E543E800040AF9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFA65CCD17E543E800040AF9 /* UIKit.framework */; };
 		FFA65CD017E543E800040AF9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFA65CCF17E543E800040AF9 /* Foundation.framework */; };
 		FFA65CD217E543E800040AF9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFA65CD117E543E800040AF9 /* CoreGraphics.framework */; };
@@ -63,6 +66,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FF438AA318005C7C0069C27B /* serdang.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = serdang.gpx; sourceTree = "<group>"; };
 		FF8A54D317F5AA0B00B2E6E5 /* OSEditPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSEditPhotoViewController.h; sourceTree = "<group>"; };
 		FF8A54D417F5AA0B00B2E6E5 /* OSEditPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSEditPhotoViewController.m; sourceTree = "<group>"; };
 		FF8A54D617F5B3D200B2E6E5 /* OSEditPhotoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OSEditPhotoViewController.xib; sourceTree = "<group>"; };
@@ -77,6 +81,9 @@
 		FF8A552717F99FFC00B2E6E5 /* KIImagePager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KIImagePager.h; sourceTree = "<group>"; };
 		FF8A552817F99FFC00B2E6E5 /* KIImagePager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KIImagePager.m; sourceTree = "<group>"; };
 		FF8A552C17F9CC3500B2E6E5 /* placeholder.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = placeholder.jpg; sourceTree = "<group>"; };
+		FF8A552E17FC5CF000B2E6E5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		FF8A553017FDB13000B2E6E5 /* OSWRestaurant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSWRestaurant.h; sourceTree = "<group>"; };
+		FF8A553117FDB13000B2E6E5 /* OSWRestaurant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSWRestaurant.m; sourceTree = "<group>"; };
 		FFA65CCA17E543E800040AF9 /* LepakMamak.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LepakMamak.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFA65CCD17E543E800040AF9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FFA65CCF17E543E800040AF9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -144,6 +151,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF8A552F17FC5CF000B2E6E5 /* MapKit.framework in Frameworks */,
 				FFA65D0317E545D900040AF9 /* SystemConfiguration.framework in Frameworks */,
 				FFA65D0117E545D200040AF9 /* StoreKit.framework in Frameworks */,
 				FFA65CFF17E545CC00040AF9 /* Security.framework in Frameworks */,
@@ -190,6 +198,8 @@
 		FFA65CC117E543E700040AF9 = {
 			isa = PBXGroup;
 			children = (
+				FF438AA318005C7C0069C27B /* serdang.gpx */,
+				FF8A552E17FC5CF000B2E6E5 /* MapKit.framework */,
 				FFA65D0217E545D900040AF9 /* SystemConfiguration.framework */,
 				FFA65D0017E545D200040AF9 /* StoreKit.framework */,
 				FFA65CFE17E545CC00040AF9 /* Security.framework */,
@@ -252,6 +262,8 @@
 				FFA65D4517F07A1400040AF9 /* OSSearchResultViewController.m */,
 				FF8A54D317F5AA0B00B2E6E5 /* OSEditPhotoViewController.h */,
 				FF8A54D417F5AA0B00B2E6E5 /* OSEditPhotoViewController.m */,
+				FF8A553017FDB13000B2E6E5 /* OSWRestaurant.h */,
+				FF8A553117FDB13000B2E6E5 /* OSWRestaurant.m */,
 			);
 			path = LepakMamak;
 			sourceTree = "<group>";
@@ -396,6 +408,7 @@
 				FF8A552917F99FFC00B2E6E5 /* KICamera.png in Resources */,
 				FF8A552A17F99FFC00B2E6E5 /* KICamera@2x.png in Resources */,
 				FF8A552D17F9CC3500B2E6E5 /* placeholder.jpg in Resources */,
+				FF438AA418005C7C0069C27B /* serdang.gpx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,6 +438,7 @@
 				FF8A54E117F5CE2D00B2E6E5 /* UIImage+AlphaAdditions.m in Sources */,
 				FF8A54E217F5CE2D00B2E6E5 /* UIImage+RoundedCornerAdditions.m in Sources */,
 				FF8A552B17F99FFC00B2E6E5 /* KIImagePager.m in Sources */,
+				FF8A553217FDB13100B2E6E5 /* OSWRestaurant.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
