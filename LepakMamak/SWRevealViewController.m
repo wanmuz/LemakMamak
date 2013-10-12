@@ -524,6 +524,7 @@ static NSString * const SWSegueRightIdentifier = @"sw_right";
     
     // Apple also tells us to do this:
     _contentView.backgroundColor = [UIColor blackColor];
+    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"bar"] forBarMetrics:UIBarMetricsDefault];
     
     // we set the current frontViewPosition to none before seting the
     // desired initial position, this will force proper controller reload

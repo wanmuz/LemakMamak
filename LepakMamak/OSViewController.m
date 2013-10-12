@@ -36,8 +36,18 @@
 
 - (void)viewDidLoad
 {
+    bannerView_ = [[GADBannerView alloc] initWithAdSize:kGADAdSizeBanner];
     
-   
+    // Specify the ad's "unit identifier". This is your AdMob Publisher ID.
+    bannerView_.adUnitID = @"a15252cd8b13add";
+    
+    // Let the runtime know which UIViewController to restore after taking
+    // the user wherever the ad goes and add it to the view hierarchy.
+    bannerView_.rootViewController = self;
+    [self.view addSubview:bannerView_];
+    
+    // Initiate a generic request to load it with an ad.
+    [bannerView_ loadRequest:[GADRequest request]];
     _sideBar.tintColor = [UIColor colorWithWhite:0.96 alpha:0.2f];
     _sideBar.target= self.revealViewController;
     _sideBar.action = @selector(revealToggle:);
@@ -50,6 +60,9 @@
     CLLocation *currentLocation = appDelegate.currentLocation;
 
     self.mapView.region = MKCoordinateRegionMake(CLLocationCoordinate2DMake(currentLocation.coordinate.latitude, currentLocation.coordinate.longitude), MKCoordinateSpanMake(0.008516, 0.021801));
+    
+    CALayer * shadow = [self createShadowWithFrame:CGRectMake(0, 0, 320, 5)];
+    [self.tableView.layer addSublayer:shadow];
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 }
@@ -82,6 +95,7 @@
 -(void)dealloc{
    [[NSNotificationCenter defaultCenter] removeObserver:self name:kOSLocationChangeNotification object:nil];
     [locationManager stopUpdatingLocation];
+   
     self.mapPinsPlaced =NO;
 }
 
@@ -148,17 +162,21 @@
     return query;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath object:(PFObject *)object {
-    static NSString *CellIdentifier = @"restaurantCell";
+    static NSString *CellIdentifier = @"MasterCell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
-    }
+    MasterCell *cell = (MasterCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-    // Configure the cell
-    cell.textLabel.text = [object objectForKey:@"name"];
+    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     
-    cell.detailTextLabel.text = [self getDistanceFromGeoPoint:[object objectForKey:@"location"]];;
+    
+        CALayer* shadow = [self createShadowWithFrame:CGRectMake(0, 67, 320, 5)];
+        
+        [cell.layer addSublayer:shadow];
+    
+    
+    cell.titleLabel.text = [object objectForKey:@"name"];
+    
+    cell.textLabel.text = [self getDistanceFromGeoPoint:[object objectForKey:@"location"]];;
     //object.tag = indexPath.row;
     return cell;
 }
@@ -268,5 +286,19 @@ static NSString *pinIdentifier = @"CustomPinAnnotation";
         return pinView;
     }
     return nil;
+}
+
+-(CALayer *)createShadowWithFrame:(CGRect)frame
+{
+    CAGradientLayer *gradient = [CAGradientLayer layer];
+    gradient.frame = frame;
+    
+    
+    UIColor* lightColor = [[UIColor blackColor] colorWithAlphaComponent:0.0];
+    UIColor* darkColor = [[UIColor blackColor] colorWithAlphaComponent:0.3];
+    
+    gradient.colors = [NSArray arrayWithObjects:(id)darkColor.CGColor, (id)lightColor.CGColor, nil];
+    
+    return gradient;
 }
 @end

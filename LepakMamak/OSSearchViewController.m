@@ -28,15 +28,13 @@
 
 - (void)viewDidLoad
 {
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.png"]];
     wifiEnabled = NO;
     screenExist = NO;
-    _sidebarButton = [[UIBarButtonItem alloc] init];
-   
-    _sidebarButton.tintColor = [UIColor colorWithWhite:0.96f alpha:0.2f];
-    
     _sidebarButton.target = self.revealViewController;
     _sidebarButton.action = @selector(revealToggle:);
-     self.navigationItem.leftBarButtonItem = _sidebarButton ;
+    _sidebarButton.tintColor = [UIColor colorWithWhite:0.96f alpha:0.2f];
+  
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     _nameField.delegate=self;
     _cityField.delegate=self;

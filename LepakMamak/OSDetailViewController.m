@@ -28,7 +28,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.png"]];
+    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"bar"] forBarMetrics:UIBarMetricsDefault];
     //Set table header
     self.restaurantImageInfos=[[NSMutableArray alloc] initWithObjects:[UIImage imageNamed:@"placeholder.jpg"], nil];
     self.imagePager.indicatorDisabled=YES;
@@ -106,13 +107,15 @@
 }
 -(UITableViewCell*)tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath object:(PFObject *)object{
     static NSString *cellId = @"CommentCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+    OSBaseTextCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
     if (cell == nil){
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellId];
+        cell = [[OSBaseTextCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
         
             }
-cell.textLabel.text = [object valueForKey:kOSPActivityContentKey];
-cell.detailTextLabel.text = [object valueForKey:@"updated_at"];
+    [cell setUser:[object objectForKey:kOSPActivityFromUserKey]];
+  //  cell.nameLabel.text = [[object valueForKey:kOSPActivityFromUserKey] valueForKey:@"name"];
+cell.commentLabel.text = [object valueForKey:kOSPActivityContentKey];
+    [cell setDate:[object createdAt]];
     return cell;
 }
 #pragma mark - KIImagePager DataSource
