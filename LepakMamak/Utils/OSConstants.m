@@ -8,6 +8,9 @@
 
 #import "OSConstants.h"
 
+
+NSString *const kOSUserDefaultsCacheFacebookFriendsKey                     = @"my.celikit.LepakMamak.userDefaults.cache.facebookFriends";
+
 NSString *const  kOSActivityClassName = @"Restaurant";
 
 NSString *const kOSActivityClassKey = @"Activity";
@@ -22,7 +25,13 @@ NSString *const kOSPActivityContentKey= @"content";
 NSString *const kOSPActivityFromUserKey=@"fromUser";
 NSString *const kOSActivityRestaurantKey=@"restaurant";
 
+NSString *const kOSUserAlreadyAutoFollowedFacebookFriendsKey   = @"userAlreadyAutoFollowedFacebookFriends";
 
+NSString *const kOSUserFacebookIDKey= @"facebookId";
+NSString *const kOSUserDisplayNameKey= @"displayName";
+
+NSString *const kOSUserProfilePicMediumKey = @"profilePictureMedium";
+NSString *const kOSUserProfilePicSmallKey = @"profilePictureSmall";
 NSString *const kOSRestaurantNameKey = @"name";
 NSString *const kOSRestaurantAddressKey = @"address";
 NSString *const kOSRestaurantWithWifiKey=@"withWifi";

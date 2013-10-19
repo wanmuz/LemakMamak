@@ -10,9 +10,21 @@
 #import <Parse/Parse.h>
 #import <CoreLocation/CoreLocation.h>
 #import "OSConstants.h"
-@interface OSAppDelegate : UIResponder <UIApplicationDelegate>
+#import "OSLoginViewController.h"
+#import "OSCache.h"
+@interface OSAppDelegate : UIResponder <UIApplicationDelegate, NSURLConnectionDataDelegate, PFLogInViewControllerDelegate>
+
 
 @property (strong, nonatomic) UIWindow *window;
 @property (nonatomic, strong) CLLocation *currentLocation;
 @property (nonatomic, assign) CLLocationAccuracy filterDistance;
+
+- (void)presentLoginViewController;
+- (void)presentLoginViewControllerAnimated:(BOOL)animated;
+
+- (void)logOut;
+
+- (void)facebookRequestDidLoad:(id)result;
+- (void)facebookRequestDidFailWithError:(NSError *)error;
+
 @end

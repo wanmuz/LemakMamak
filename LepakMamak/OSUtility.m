@@ -8,6 +8,8 @@
 
 #import "OSUtility.h"
 #import "OSCache.h"
+#import "UIImage+ResizeAdditions.h"
+#import "OSConstants.h"
 @implementation OSUtility
 static OSUtility *_sharedInstance = nil;
 +(OSUtility*)sharedInstance{
@@ -137,5 +139,45 @@ static OSUtility *_sharedInstance = nil;
     
     return query;
     
+}
+-(void)processFacebookProfilePictureData:(NSData*)newProfilePictureData{
+    if (newProfilePictureData.length==0){
+        return;
+    }
+    NSURL *cachesDirectoryURL = [[[NSFileManager defaultManager] URLsForDirectory:NSCachesDirectory inDomains:NSUserDomainMask] lastObject];
+    
+    NSURL *profilePictureCacheURL = [cachesDirectoryURL URLByAppendingPathComponent:@"FacebookProfilePicture.jpg"];
+    
+    if ([[NSFileManager defaultManager]fileExistsAtPath:[profilePictureCacheURL path]]){
+        NSData *oldProfilePictureData = [NSData dataWithContentsOfFile:[profilePictureCacheURL path]];
+        if ([oldProfilePictureData isEqualToData:newProfilePictureData]){
+            return;
+        }
+    }
+    UIImage *image = [UIImage imageWithData:newProfilePictureData];
+    UIImage *mediumImage = [image thumbnailImage:280 transparentBorder:0 cornerRadius:0 interpolationQuality:kCGInterpolationHigh];
+    UIImage *smallRoundedImage = [image thumbnailImage:64 transparentBorder:0 cornerRadius:0 interpolationQuality:kCGInterpolationLow];
+    
+    NSData *mediumImageData = UIImageJPEGRepresentation(mediumImage, 0.5);
+    NSData *smallRoundedImageData = UIImagePNGRepresentation(smallRoundedImage);
+    
+    if (mediumImageData.length > 0 ){
+        PFFile *fileMediumImage = [PFFile fileWithData:mediumImageData];
+        [fileMediumImage saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error){
+            if (!error){
+                [[PFUser currentUser] setObject:fileMediumImage forKey:kOSUserProfilePicMediumKey];
+                [[PFUser currentUser] saveEventually];
+            }
+        }];
+    }
+    if (smallRoundedImageData.length > 0){
+        PFFile *fileSmallRoundedImage = [PFFile fileWithData:smallRoundedImageData];
+        [fileSmallRoundedImage saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error){
+            if (!error){
+                [[PFUser currentUser] setObject:fileSmallRoundedImage forKey:kOSUserProfilePicSmallKey];
+                [[PFUser currentUser] saveEventually];
+            }
+        }];
+    }
 }
 @end

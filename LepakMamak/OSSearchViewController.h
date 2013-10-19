@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "OSSearchResultViewController.h"
-@interface OSSearchViewController : UIViewController<UITextFieldDelegate>
+#import "GADBannerView.h"
+@interface OSSearchViewController : UIViewController<UITextFieldDelegate>{
+    GADBannerView *bannerView_;
+}
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
 @property (weak, nonatomic) IBOutlet UITextField *cityField;
 @property (weak, nonatomic) IBOutlet UIButton *wifiButton;

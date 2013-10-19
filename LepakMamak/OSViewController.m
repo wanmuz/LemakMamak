@@ -8,7 +8,9 @@
 
 #import "OSViewController.h"
 #import "OSDetailViewController.h"
-@interface OSViewController ()
+@interface OSViewController (){
+        NSMutableData *_data;
+}
 
 @property (nonatomic, strong) CLLocationManager *_locationManager;
 @property (nonatomic, assign) BOOL mapPannedSinceLocationUpdate;
@@ -127,12 +129,21 @@
 -(void)setLoginPage{
     OSLoginViewController *loginViewController = [[OSLoginViewController alloc] init];
     [loginViewController setDelegate:self];
-    [loginViewController setFacebookPermissions:[NSArray arrayWithObjects:@"friends_about_me", nil]];
-    [loginViewController setFields:PFLogInFieldsUsernameAndPassword | PFLogInFieldsTwitter | PFLogInFieldsSignUpButton | PFLogInFieldsDismissButton];
+    [loginViewController setFields:PFLogInFieldsUsernameAndPassword | PFLogInFieldsTwitter | PFLogInFieldsSignUpButton | PFLogInFieldsDismissButton | PFLogInFieldsFacebook];
     [self presentViewController:loginViewController animated:YES completion:nil];
     
     }
 
+-(void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user{
+    [FBRequestConnection startForMeWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error){
+        if (!error){
+            [self facebookRequestDidLoad:result];
+        }
+        else{
+            //[self facebookRequestDidFailWithError:error];
+        }
+    }];
+}
 #pragma mark - Parse
 
 - (void)objectsDidLoad:(NSError *)error {
@@ -301,4 +312,97 @@ static NSString *pinIdentifier = @"CustomPinAnnotation";
     
     return gradient;
 }
+
+-(void)facebookRequestDidLoad:(id)result{
+    PFUser *user = [PFUser currentUser];
+    
+    NSArray *data = [result objectForKey:@"data"];
+    NSURL *profilePictureURL = [NSURL URLWithString:[NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?type=large", [[PFUser currentUser] objectForKey:kOSUserFacebookIDKey]]];
+    NSURLRequest *profilePictureURLRequest = [NSURLRequest requestWithURL:profilePictureURL cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:10.0f]; // Facebook profile picture cache policy: Expires in 2 weeks
+    [NSURLConnection connectionWithRequest:profilePictureURLRequest delegate:self];
+    if (data)
+    {
+        NSMutableArray *facebookIds = [[NSMutableArray alloc] initWithCapacity:[data count]];
+        for (NSDictionary *friendData in data){
+            if (friendData[@"id"]){
+                [facebookIds addObject:friendData[@"id"]];
+            }
+            
+        }
+        [[OSCache sharedCache] setFacebookFriends:facebookIds];
+        if(user){
+            if (![user objectForKey:kOSUserAlreadyAutoFollowedFacebookFriendsKey])
+            {
+             //   firstLaunch = YES;
+                [user setObject:@YES forKey:kOSUserAlreadyAutoFollowedFacebookFriendsKey];
+                
+                NSError *error = nil;
+                
+                PFQuery *facebookFriendsQuery = [PFUser query];
+                [facebookFriendsQuery whereKey:kOSUserFacebookIDKey containedIn:facebookIds];
+                
+                PFQuery *query = [PFQuery orQueryWithSubqueries:[NSArray arrayWithObjects: facebookFriendsQuery, nil]];
+                
+                NSArray *mamakFriends = [query findObjects:&error];
+                if (!error) {
+                    [mamakFriends enumerateObjectsUsingBlock:^(PFUser *newFriend, NSUInteger idx, BOOL *stop){
+                        // PFObject *joinActivity
+                    }];
+                }
+                
+            }
+            [user saveEventually];
+        }
+        else{
+          //  [self logOut];
+        }
+    }
+    else{
+        
+        if (user){
+            NSString *facebookName = result[@"name"];
+            if (facebookName && [facebookName length]!= 0){
+                [user setObject:facebookName forKey:kOSUserDisplayNameKey];
+            }else{
+                [user setObject:@"Someone" forKey:kOSUserDisplayNameKey];
+            }
+            NSString *facebookId = result[@"id"];
+            if (facebookId && [facebookId length] != 0){
+                [user setObject:facebookId forKey:kOSUserFacebookIDKey];
+            }
+            [user saveEventually];
+        }
+        [FBRequestConnection startForMyFriendsWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error){
+            if (!error){
+                [self facebookRequestDidLoad:result];
+            }else{
+             //   [self facebookRequestDidFailWithError:error];
+            }
+        }];
+        
+        
+    }
+    
+}
+- (void)facebookRequestDidFailWithError:(NSError *)error {
+    NSLog(@"Facebook error: %@", error);
+    
+    if ([PFUser currentUser]) {
+        if ([[error userInfo][@"error"][@"type"] isEqualToString:@"OAuthException"]) {
+            NSLog(@"The Facebook token was invalidated. Logging out.");
+           // [self logOut];
+        }
+    }
+}
+
+-(void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response{
+    _data =[[NSMutableData alloc] init];
+}
+-(void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data{
+    [_data appendData:data];
+}
+-(void)connectionDidFinishLoading:(NSURLConnection *)connection{
+    [[OSUtility sharedInstance] processFacebookProfilePictureData:_data];
+}
+
 @end

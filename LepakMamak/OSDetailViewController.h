@@ -15,6 +15,7 @@
 #import "OSEditPhotoViewController.h"
 #import "KIImagePager.h"
 #import "OSBaseTextCell.h"
+
 @interface OSDetailViewController : PFQueryTableViewController<UITextFieldDelegate, OSHeaderViewDelegate, UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (nonatomic, strong) PFObject *restaurant;
 @property (weak, nonatomic) IBOutlet KIImagePager *imagePager;

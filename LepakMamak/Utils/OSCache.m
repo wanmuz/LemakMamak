@@ -90,4 +90,21 @@
     }
     return NO;
 }
+-(void)setFacebookFriends:(NSArray *)friends{
+    NSString *key = kOSUserDefaultsCacheFacebookFriendsKey;
+    [self.cache setObject:friends forKey:key];
+    [[NSUserDefaults standardUserDefaults]setObject:friends forKey:key];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+-(NSArray *)facebookFriends{
+    NSString *key = kOSUserDefaultsCacheFacebookFriendsKey;
+    if ([self.cache objectForKey:key]){
+        return [self.cache objectForKey:key];
+    }
+    NSArray *friends = [[NSUserDefaults standardUserDefaults] objectForKey:key];
+    if(friends){
+        [self.cache setObject:friends forKey:key];
+    }
+    return friends;
+}
 @end

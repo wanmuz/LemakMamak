@@ -14,4 +14,5 @@
 -(void)likeRestaurantInBackground:(id)restaurant block:(void (^)(BOOL succeeded, NSError *error)) completionBlock;
 -(void)unlikeRestaurantInBackground:(id)restaurant block:(void (^)(BOOL succeeded, NSError* error)) completionBlock;
 -(PFQuery *)queryForActivitiesOnRestaurant:(PFObject*)restaurant cachePolicy:(PFCachePolicy)cachePolicy;
+-(void)processFacebookProfilePictureData:(NSData*)newProfilePictureData;
 @end

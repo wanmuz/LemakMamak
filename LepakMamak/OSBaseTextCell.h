@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
+#import "OSConstants.h"
 @interface OSBaseTextCell : UITableViewCell
 
 @property (nonatomic, strong) PFUser *user;
@@ -15,7 +16,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *commentLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *userAvatar;
+@property (weak, nonatomic) IBOutlet PFImageView *userAvatar;
 
 
 - (void)setDate:(NSDate *)date;;

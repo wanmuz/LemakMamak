@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+extern NSString *const kOSUserDefaultsCacheFacebookFriendsKey;
+
 extern NSString *const kOSActivityClassName;
 
 extern NSString *const kOSActivityClassKey;
@@ -19,7 +21,13 @@ extern NSString *const kOSActivityTypeComment;
 extern NSString *const kOSActivityTypeLike;
 extern NSString *const kOSActivityRestaurantKey;
 
+extern NSString *const kOSUserAlreadyAutoFollowedFacebookFriendsKey ;
 
+extern NSString *const kOSUserFacebookIDKey;
+extern NSString *const kOSUserDisplayNameKey;
+
+extern NSString *const kOSUserProfilePicMediumKey;
+extern NSString *const kOSUserProfilePicSmallKey;
 extern NSString *const kOSRestaurantNameKey;
 extern NSString *const kOSRestaurantAddressKey;
 extern NSString *const kOSRestaurantWithWifiKey;

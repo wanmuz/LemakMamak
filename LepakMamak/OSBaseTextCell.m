@@ -43,7 +43,12 @@ static TTTTimeIntervalFormatter *timeFormatter;
 }
 -(void)setUser:(PFUser *)aUser{
     user = aUser;
-    [self.nameLabel setText:[self.user objectForKey:@"username"]];
+    self.userAvatar.image = [UIImage imageNamed:@"AvatarPlaceholder.png"];
+    if ([self.user objectForKey:kOSUserProfilePicSmallKey]){
+    [self.userAvatar setFile:[self.user objectForKey:kOSUserProfilePicSmallKey]];
+        [self.userAvatar loadInBackground];
+    }
+    [self.nameLabel setText:[self.user objectForKey:kOSUserDisplayNameKey]];
 }
 -(void)setDate:(NSDate *)date{
    [self.timeLabel setText:[timeFormatter stringForTimeIntervalFromDate:[NSDate date] toDate:date]];

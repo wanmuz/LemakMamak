@@ -137,7 +137,8 @@ cell.commentLabel.text = [object valueForKey:kOSPActivityContentKey];
     [query whereKey:kOSActivityTypeKey equalTo:kOSActivityTypeComment];
     [query orderByAscending:@"createdAt"];
     
-    if (self.objects.count == 0 || ![[UIApplication sharedApplication].delegate performSelector:@selector(isParseReachable)]) {
+  //  if (self.objects.count == 0 || ![[UIApplication sharedApplication].delegate performSelector:@selector(isParseReachable)]) {
+    if (self.objects.count == 0){
         [query setCachePolicy:kPFCachePolicyCacheThenNetwork];
     }
     

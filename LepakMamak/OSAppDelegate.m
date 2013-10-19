@@ -7,7 +7,13 @@
 //
 
 #import "OSAppDelegate.h"
+#import "OSUtility.h"
+@interface OSAppDelegate(){
+    BOOL firstLaunch;
+    NSMutableData *_data;
 
+}
+@end
 @implementation OSAppDelegate
 @synthesize filterDistance;
 @synthesize currentLocation;
@@ -22,9 +28,11 @@
 }
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+       
     // Override point for customization after application launch.
     [Parse setApplicationId:@"0pdsd1YNGJsEIdK1VrIe13TV9KYAjI3HSNImUECf"
                   clientKey:@"pfU85IYKLdWrGzhX1MLmaIwI2pllJCCPuhMecieg"];
+    [PFFacebookUtils initializeFacebook];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
    
    
@@ -56,6 +64,106 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+-(void)presentLoginViewController{
+    [self presentLoginViewControllerAnimated:YES];
+}
+-(void)presentLoginViewControllerAnimated:(BOOL)animated{
+    OSLoginViewController *loginViewController= [[OSLoginViewController alloc] init];
+    [loginViewController setDelegate:self];
+    loginViewController.fields= PFLogInFieldsFacebook;
+loginViewController.facebookPermissions = @[ @"user_about_me"];
+  //present view controller
+}
+-(void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user{
+    [FBRequestConnection startForMeWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error){
+        if (!error){
+            [self facebookRequestDidLoad:result];
+        }
+        else{
+            [self facebookRequestDidFailWithError:error];
+        }
+    }];
+}
+
+-(void)facebookRequestDidLoad:(id)result{
+    PFUser *user = [PFUser currentUser];
+    
+NSArray *data = [result objectForKey:@"data"];
+
+if (data)
+{
+    NSMutableArray *facebookIds = [[NSMutableArray alloc] initWithCapacity:[data count]];
+    for (NSDictionary *friendData in data){
+        if (friendData[@"id"]){
+            [facebookIds addObject:friendData[@"id"]];
+        }
+        
+    }
+    [[OSCache sharedCache] setFacebookFriends:facebookIds];
+    if(user){
+        if (![user objectForKey:kOSUserAlreadyAutoFollowedFacebookFriendsKey])
+        {
+            firstLaunch = YES;
+            [user setObject:@YES forKey:kOSUserAlreadyAutoFollowedFacebookFriendsKey];
+            
+            NSError *error = nil;
+            
+            PFQuery *facebookFriendsQuery = [PFUser query];
+            [facebookFriendsQuery whereKey:kOSUserFacebookIDKey containedIn:facebookIds];
+            
+             PFQuery *query = [PFQuery orQueryWithSubqueries:[NSArray arrayWithObjects: facebookFriendsQuery, nil]];
+            
+            NSArray *mamakFriends = [query findObjects:&error];
+            if (!error) {
+                [mamakFriends enumerateObjectsUsingBlock:^(PFUser *newFriend, NSUInteger idx, BOOL *stop){
+               // PFObject *joinActivity
+                }];
+            }
+        
+        }
+        [user saveEventually];
+    }
+    else{
+        [self logOut];
+    }
+}
+else{
+        
+    if (user){
+        NSString *facebookName = result[@"name"];
+        if (facebookName && [facebookName length]!= 0){
+            [user setObject:facebookName forKey:kOSUserDisplayNameKey];
+        }else{
+            [user setObject:@"Someone" forKey:kOSUserDisplayNameKey];
+        }
+        NSString *facebookId = result[@"id"];
+        if (facebookId && [facebookId length] != 0){
+            [user setObject:facebookId forKey:kOSUserFacebookIDKey];
+        }
+        [user saveEventually];
+    }
+    [FBRequestConnection startForMyFriendsWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error){
+        if (!error){
+            [self facebookRequestDidLoad:result];
+        }else{
+            [self facebookRequestDidFailWithError:error];
+        }
+    }];
+
+
+}
+
+}
+-(void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response{
+    _data =[[NSMutableData alloc] init];
+}
+-(void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data{
+    [_data appendData:data];
+}
+-(void)connectionDidFinishLoading:(NSURLConnection *)connection{
+    [[OSUtility sharedInstance] processFacebookProfilePictureData:_data];
 }
 
 @end

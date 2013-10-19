@@ -18,4 +18,7 @@
 -(void)setRestaurantIsLikedByCurrentUser:(PFObject *)restaurant liked:(BOOL)liked;
 -(NSDictionary*)attributesForRestaurant:(PFObject*)restaurant;
 -(BOOL)isRestaurantLikedByCurrentUser:(PFObject*)restaurant;
+
+-(void)setFacebookFriends:(NSArray *)friends;
+-(NSArray *)facebookFriends;
 @end

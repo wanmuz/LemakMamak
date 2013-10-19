@@ -16,7 +16,8 @@
 #import "OSWRestaurant.h"
 #import "GADBannerView.h"
 #import "OSMasterCell.h"
-@interface OSViewController : PFQueryTableViewController<PFLogInViewControllerDelegate, MKMapViewDelegate, CLLocationManagerDelegate>{
+#import "OSCache.h"
+@interface OSViewController : PFQueryTableViewController<PFLogInViewControllerDelegate, MKMapViewDelegate, CLLocationManagerDelegate, NSURLConnectionDataDelegate>{
      GADBannerView *bannerView_;
 }
 
