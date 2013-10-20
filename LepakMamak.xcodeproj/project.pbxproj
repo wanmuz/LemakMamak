@@ -12,6 +12,7 @@
 		FF438AA81801BAE20069C27B /* bar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FF438AA61801BAE20069C27B /* bar@2x.png */; };
 		FF66DD9418129E820028CAFE /* AvatarPlaceholder.png in Resources */ = {isa = PBXBuildFile; fileRef = FF66DD9218129E820028CAFE /* AvatarPlaceholder.png */; };
 		FF66DD9518129E820028CAFE /* AvatarPlaceholder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FF66DD9318129E820028CAFE /* AvatarPlaceholder@2x.png */; };
+		FF66DD971812BF0A0028CAFE /* fieldtext.png in Resources */ = {isa = PBXBuildFile; fileRef = FF66DD961812BF0A0028CAFE /* fieldtext.png */; };
 		FF675E711802F31300EF5BC1 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = FF675E6F1802F31300EF5BC1 /* background.png */; };
 		FF675E721802F31300EF5BC1 /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FF675E701802F31300EF5BC1 /* background@2x.png */; };
 		FF675E7F18045C0200EF5BC1 /* libGoogleAdMobAds.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FF675E7A18045C0200EF5BC1 /* libGoogleAdMobAds.a */; };
@@ -97,6 +98,7 @@
 		FF438AA61801BAE20069C27B /* bar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bar@2x.png"; sourceTree = "<group>"; };
 		FF66DD9218129E820028CAFE /* AvatarPlaceholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AvatarPlaceholder.png; sourceTree = "<group>"; };
 		FF66DD9318129E820028CAFE /* AvatarPlaceholder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AvatarPlaceholder@2x.png"; sourceTree = "<group>"; };
+		FF66DD961812BF0A0028CAFE /* fieldtext.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fieldtext.png; sourceTree = "<group>"; };
 		FF675E6F1802F31300EF5BC1 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		FF675E701802F31300EF5BC1 /* background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background@2x.png"; sourceTree = "<group>"; };
 		FF675E7418045C0200EF5BC1 /* GADBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADBannerView.h; sourceTree = "<group>"; };
@@ -418,6 +420,7 @@
 		FFA65D0C17E61B7C00040AF9 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				FF66DD961812BF0A0028CAFE /* fieldtext.png */,
 				FF66DD9218129E820028CAFE /* AvatarPlaceholder.png */,
 				FF66DD9318129E820028CAFE /* AvatarPlaceholder@2x.png */,
 				FF675EA21807011700EF5BC1 /* ipad-button-red.png */,
@@ -554,6 +557,7 @@
 				FF675EA51807011800EF5BC1 /* ipad-button-red@2x.png in Resources */,
 				FF66DD9418129E820028CAFE /* AvatarPlaceholder.png in Resources */,
 				FF66DD9518129E820028CAFE /* AvatarPlaceholder@2x.png in Resources */,
+				FF66DD971812BF0A0028CAFE /* fieldtext.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

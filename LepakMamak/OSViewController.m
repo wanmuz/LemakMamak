@@ -191,6 +191,7 @@
     //object.tag = indexPath.row;
     return cell;
 }
+
 -(NSString*)getDistanceFromGeoPoint:(PFGeoPoint*)geoPoint{
     OSAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     CLLocation *currentLocation = appDelegate.currentLocation;

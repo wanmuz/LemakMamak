@@ -15,8 +15,12 @@
 #import "OSEditPhotoViewController.h"
 #import "KIImagePager.h"
 #import "OSBaseTextCell.h"
+#import "GADBannerView.h"
 
-@interface OSDetailViewController : PFQueryTableViewController<UITextFieldDelegate, OSHeaderViewDelegate, UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface OSDetailViewController : PFQueryTableViewController<UITextFieldDelegate, OSHeaderViewDelegate, UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>{
+    GADBannerView *bannerView_;
+}
+
 @property (nonatomic, strong) PFObject *restaurant;
 @property (weak, nonatomic) IBOutlet KIImagePager *imagePager;
 

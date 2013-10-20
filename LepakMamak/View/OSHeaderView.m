@@ -62,4 +62,9 @@
         [delegate headerView:self didTapLikeRestaurantButton:button restaurant:self.restaurant];
 }
 }
+-(void)didTapFavRestaurantButtonAction:(UIButton*)button{
+    if(delegate && [delegate respondsToSelector:@selector(headerView:didTapFavRestaurantButton:restaurant:)]){
+        [delegate headerView:self didTapFavRestaurantButton:button restaurant:self.restaurant];
+    }
+}
 @end

@@ -18,6 +18,25 @@ static OSUtility *_sharedInstance = nil;
     }
     return _sharedInstance;
 }
+
+#pragma mark Fav Restaurants
+-(void)favRestaurantsInBackground:(id)restaurant block:(void (^)(BOOL succeeded, NSError *error)) completionBlock{
+    PFQuery *queryExistingFavs = [PFQuery queryWithClassName:kOSActivityClassKey];
+    [queryExistingFavs whereKey:kOSActivityRestaurantKey containedIn:restaurant];
+    [queryExistingFavs whereKey:kOSActivityTypeKey equalTo:kOSActivityTypeFav];
+    [queryExistingFavs whereKey:kOSPActivityFromUserKey equalTo:[PFUser currentUser]];
+    [queryExistingFavs setCachePolicy:kPFCachePolicyNetworkOnly];
+    [queryExistingFavs findObjectsInBackgroundWithBlock:^(NSArray* activities, NSError *error){
+        if (!error){
+            for (PFObject *activity in activities){
+                [activity delete];
+            }
+        }
+        
+      //  PFObject *favActivity = [
+    }
+     ];
+}
 #pragma mark Like Photos
 -(void)likeRestaurantInBackground:(id)restaurant block:(void (^)(BOOL succeeded, NSError *error)) completionBlock{
     PFQuery *queryExistingLikes = [PFQuery queryWithClassName:kOSActivityClassKey];

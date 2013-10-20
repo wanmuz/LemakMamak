@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 #import "OSConstants.h"
+#import "OSMasterCell.h"
+#import "OSDetailViewController.h"
 @interface OSSearchResultViewController : PFQueryTableViewController
 
 @property (nonatomic, strong) PFObject *restaurant;

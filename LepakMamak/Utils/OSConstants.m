@@ -19,6 +19,7 @@ NSString *const kOSPhotoClassKey=@"Photo";
 //Type values
 NSString *const kOSActivityTypeComment = @"comment";
 NSString *const kOSActivityTypeLike = @"like";
+NSString *const kOSActivityTypeFav = @"favourite";
 
 NSString *const kOSActivityTypeKey        = @"type";
 NSString *const kOSPActivityContentKey= @"content";

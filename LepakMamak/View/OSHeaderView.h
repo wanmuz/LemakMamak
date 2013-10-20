@@ -13,6 +13,7 @@
 @optional
 
 - (void)headerView:(OSHeaderView *)headerView didTapLikeRestaurantButton:(UIButton *)button restaurant:(PFObject *)restaurant;
+- (void)headerView:(OSHeaderView *)headerView didTapFavRestaurantButton:(UIButton *)button restaurant:(PFObject *)restaurant;
 @end
 @interface OSHeaderView : UIView
 

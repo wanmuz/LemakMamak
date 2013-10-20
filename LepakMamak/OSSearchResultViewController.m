@@ -41,15 +41,33 @@
 }
 
 -(UITableViewCell*)tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath object:(PFObject *)object{
-    static NSString *cellId = @"RestaurantCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
-    if (cell == nil){
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellId];
-        
-    }
-    cell.textLabel.text = [object valueForKey:kOSRestaurantNameKey];
-   // cell.detailTextLabel.text = [object valueForKey:@"updated_at"];
+    static NSString *cellId = @"MasterCell";
+    MasterCell *cell = (MasterCell *)[tableView dequeueReusableCellWithIdentifier:cellId];
+    
+    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+    
+    
+    CALayer* shadow = [self createShadowWithFrame:CGRectMake(0, 67, 320, 5)];
+    
+    [cell.layer addSublayer:shadow];
+    
+    
+    cell.titleLabel.text = [object objectForKey:@"name"];
+    
+   // cell.textLabel.text = [self getDistanceFromGeoPoint:[object objectForKey:@"location"]];;
+    //object.tag = indexPath.row;
     return cell;
+}
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([[segue identifier] isEqualToString:@"showDetail"]){
+        OSDetailViewController *detailVC = [segue destinationViewController];
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        PFObject *restaurant = [self.objects objectAtIndex:indexPath.row];
+        [detailVC setRestaurant:restaurant];
+    }
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 67;
 }
 - (void)viewDidLoad
 {
@@ -61,6 +79,19 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+-(CALayer *)createShadowWithFrame:(CGRect)frame
+{
+    CAGradientLayer *gradient = [CAGradientLayer layer];
+    gradient.frame = frame;
+    
+    
+    UIColor* lightColor = [[UIColor blackColor] colorWithAlphaComponent:0.0];
+    UIColor* darkColor = [[UIColor blackColor] colorWithAlphaComponent:0.3];
+    
+    gradient.colors = [NSArray arrayWithObjects:(id)darkColor.CGColor, (id)lightColor.CGColor, nil];
+    
+    return gradient;
 }
 
 @end

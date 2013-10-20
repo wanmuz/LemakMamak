@@ -28,6 +28,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    bannerView_ = [[GADBannerView alloc] initWithAdSize:kGADAdSizeBanner];
+    
+    // Specify the ad's "unit identifier". This is your AdMob Publisher ID.
+    bannerView_.adUnitID = @"a15252cd8b13add";
+    
+    // Let the runtime know which UIViewController to restore after taking
+    // the user wherever the ad goes and add it to the view hierarchy.
+    bannerView_.rootViewController = self;
+    [self.view addSubview:bannerView_];
+    
+    // Initiate a generic request to load it with an ad.
+    [bannerView_ loadRequest:[GADRequest request]];
+
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.png"]];
     [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"bar"] forBarMetrics:UIBarMetricsDefault];
     //Set table header
@@ -171,6 +184,7 @@ cell.commentLabel.text = [object valueForKey:kOSPActivityContentKey];
         }];
     }
 }
+
 -(void)headerView:(OSHeaderView *)headerView didTapLikeRestaurantButton:(UIButton *)button restaurant:(PFObject *)aRestaurant{
    
     BOOL liked = !button.selected;
@@ -205,7 +219,40 @@ cell.commentLabel.text = [object valueForKey:kOSPActivityContentKey];
     }
    // }
 }
-
+-(void)headerView:(OSHeaderView *)headerView didTapFavRestaurantButton:(UIButton *)button restaurant:(PFObject *)aRestaurant{
+    
+    BOOL liked = !button.selected;
+    // [headerView setLikeStatus:liked];
+    NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+    [numberFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_us"]];
+    
+    NSNumber *likeCount = [numberFormatter numberFromString:button.titleLabel.text];
+    
+    if (liked){
+        likeCount = [NSNumber numberWithInt:[likeCount intValue]+ 1];
+        [[OSCache sharedCache] incrementLikerCountForRestaurant:restaurant];
+    }
+    else{
+        if ([likeCount intValue] > 0){
+            likeCount = [NSNumber numberWithInt:[likeCount intValue] - 1];
+        }
+        [[OSCache sharedCache] decrementLikerCountForRestaurant:restaurant];
+    }
+    [[OSCache sharedCache] setRestaurantIsLikedByCurrentUser:restaurant liked:liked];
+    [button setTitle:[numberFormatter stringFromNumber:likeCount] forState:UIControlStateNormal];
+    if (liked){
+        [[OSUtility sharedInstance] likeRestaurantInBackground:restaurant block:^(BOOL succeeded, NSError *error){
+            
+        }];
+    }else{
+        [ [OSUtility sharedInstance] unlikeRestaurantInBackground:restaurant block:^(BOOL succeeded,
+                                                                                     NSError* error){
+            //  [self.headerView setLikeStatus:!succeeded];
+            
+        }];
+    }
+    // }
+}
 #pragma mark - ()
 
 - (IBAction)cameraButtonPressed:(id)sender {

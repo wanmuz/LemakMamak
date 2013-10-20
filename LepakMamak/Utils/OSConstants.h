@@ -18,7 +18,9 @@ extern NSString *const kOSActivityTypeKey ;
 extern NSString *const kOSPActivityContentKey;
 extern NSString *const kOSPActivityFromUserKey;
 extern NSString *const kOSActivityTypeComment;
+extern NSString *const kOSActivityTypeFav;
 extern NSString *const kOSActivityTypeLike;
+
 extern NSString *const kOSActivityRestaurantKey;
 
 extern NSString *const kOSUserAlreadyAutoFollowedFacebookFriendsKey ;
